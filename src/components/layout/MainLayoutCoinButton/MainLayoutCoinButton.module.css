@@ -1,0 +1,31 @@
+.btn {
+  @apply h-14
+    px-3
+    inline-flex
+    items-center
+    rounded-lg
+    border
+    gap-3
+    bg-n11
+    border-n11
+    hover:bg-n9
+    hover:border-n9;
+}
+.btn.active {
+    @apply border-p2;
+}
+.btn.active .value {
+    @apply text-n0;
+}
+.wrapper {
+    @apply flex flex-col items-start justify-start;
+}
+.name {
+    @apply font-semibold uppercase text-sm;
+}
+.value {
+    @apply flex items-center text-xs gap-1 text-n3;
+}
+.chevron {
+    @apply w-4
+}

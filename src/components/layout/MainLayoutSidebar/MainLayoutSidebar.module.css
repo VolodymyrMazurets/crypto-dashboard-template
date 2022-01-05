@@ -1,0 +1,32 @@
+.menu {
+  @apply h-full py-8 flex-col;
+}
+.logo {
+  @apply ml-8 mb-12;
+}
+.item {
+  @apply flex w-full relative mb-4 last:mb-0;
+}
+.link {
+  @apply flex items-center w-full h-10 pl-8 gap-3 text-n2 text-sm transition-colors;
+}
+.link:before {
+  @apply absolute top-0 bottom-0 bg-n0 rounded transition-all;
+  left: -1.5px;
+  width: 3px;
+  opacity: 0;
+  content: '';
+
+}
+.link.active {
+  @apply text-n0;
+}
+.link.active:before {
+    opacity: 1;
+}
+.icon {
+  @apply w-4;
+}
+.toggle {
+  @apply cursor-pointer hover:text-n1 transition-colors;
+}

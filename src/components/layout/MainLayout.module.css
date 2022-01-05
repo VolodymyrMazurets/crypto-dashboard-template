@@ -1,0 +1,6 @@
+.header {
+    @apply p-6 border-n8 border relative flex justify-between items-center;
+}
+.wrapper {
+    @apply flex items-center gap-4;
+}

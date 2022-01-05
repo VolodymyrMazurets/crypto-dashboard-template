@@ -1,0 +1,92 @@
+.button {
+  @apply bg-p5
+    h-10
+    px-8
+    inline-flex
+    items-center
+    rounded-lg
+    border
+    border-p5
+    outline-ts
+    transition-colors
+    hover:bg-p4
+    hover:border-p4
+    active:bg-p6
+    active:border-p6
+    focus:border-p1;
+  @apply disabled:bg-n5
+    disabled:border-n5
+    disabled:cursor-not-allowed !important;
+}
+.button.secondary {
+  @apply bg-p8
+    border-p8
+    hover:bg-p7
+    hover:border-p7
+    active:bg-p9
+    active:border-p9;
+}
+
+.button.icon {
+  @apply w-10
+  h-10
+  px-0
+  justify-center
+  bg-n8
+  border-n8
+  hover:bg-n5
+  hover:border-n5
+  active:bg-n11
+  active:border-n11;
+}
+.button.icon.big {
+  @apply w-14 h-14;
+}
+
+.button.success {
+  @apply bg-g3
+      border-g3
+      hover:bg-g10
+      hover:border-g10
+      active:bg-g11
+      active:border-g11;
+}
+.button.danger {
+  @apply bg-r2
+      border-r2
+      hover:bg-r10
+      hover:border-r10
+      active:bg-r11
+      active:border-r11;
+}
+.button.big {
+  @apply h-12;
+}
+.button.loading {
+  @apply text-ts pointer-events-none;
+}
+.button.loading > *:not(.loader) {
+  @apply hidden pointer-events-none opacity-0;
+}
+.text {
+  @apply text-n0
+    font-medium
+    text-sm;
+}
+.secondary .text {
+  @apply text-p3;
+}
+.button:disabled .text {
+  @apply text-n3;
+}
+.loader {
+  @apply stroke-n0 w-4 h-4 animate-spin fill-ts;
+  stroke-dasharray: 34px;
+  stroke-dashoffset: 42px;
+  stroke-width: 2px;
+  z-index: 1;
+  stroke-linecap: round;
+}
+.icon {
+  @apply w-5 h-5;
+}
