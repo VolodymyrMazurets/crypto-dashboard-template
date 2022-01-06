@@ -1,0 +1,8 @@
+
+  .text {
+    @apply text-n0 text-sm;
+  }
+  .chevron {
+    @apply text-n2 w-5 transition-transform;
+  }
+  

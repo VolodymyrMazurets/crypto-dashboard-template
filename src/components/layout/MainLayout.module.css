@@ -1,6 +1,16 @@
+.layout {
+  @apply h-screen overflow-hidden;
+}
 .header {
-    @apply p-6 border-n8 border relative flex justify-between items-center;
+  @apply p-6 border-n8 border relative flex justify-between items-center;
 }
 .wrapper {
-    @apply flex items-center gap-4;
+  @apply flex items-center gap-4;
+}
+.content {
+  @apply p-6 overflow-auto;
+  height: calc(100vh - 106px);
+}
+.page {
+    padding-top: 24px;
 }

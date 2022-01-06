@@ -5,6 +5,7 @@ export const iconNames = [
     'ArrowUp45',
     'BarChart',
     'BarChartV2',
+    'Binance',
     'Bitcoin',
     'BitcoinFilled',
     'BitcoinOutline',

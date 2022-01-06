@@ -1,0 +1,33 @@
+.controls {
+  @apply flex justify-between items-center;
+}
+.wrapper {
+  @apply flex items-center gap-10;
+}
+.wrapper.last {
+  @apply gap-4;
+}
+.item {
+    @apply flex items-center gap-3;
+}
+.iconWrapper {
+    @apply flex justify-center items-center rounded-lg bg-n11 w-10 h-10;
+}
+.icon {
+    @apply w-5 text-p2;
+}
+.column {
+    @apply flex flex-col;
+}
+.name {
+    @apply text-xs text-n3;
+}
+.value {
+    @apply text-2xl font-semibold flex items-end gap-1;
+}
+.percents {
+    @apply flex items-center gap-1 text-g2 text-xs;
+}
+.chevron {
+    @apply w-4
+}

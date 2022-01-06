@@ -2,12 +2,12 @@ import React, { FC } from "react";
 import cn from "classnames";
 import { Icon } from "src/components/common";
 import Tooltip from "rc-tooltip";
-import styles from "./MainLayoutLangDropdown.module.css";
-import "./MainLayoutLangDropdown.css";
+import styles from "./MainLayoutUserDropdown.module.css";
+import "./MainLayoutUserDropdown.css";
 import "rc-tooltip/assets/bootstrap.css";
 import { useState } from "react";
 
-export const MainLayoutLangDropdown: FC = () => {
+export const MainLayoutUserDropdown: FC = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const dropdownContent = <div className={styles.content}>DropdownContent</div>;
@@ -15,7 +15,7 @@ export const MainLayoutLangDropdown: FC = () => {
   return (
     <>
       <Tooltip
-        overlayClassName="MainLayoutLangDropdown"
+        overlayClassName="MainLayoutUserDropdown"
         placement="bottomRight"
         overlay={dropdownContent}
         trigger={["click"]}
@@ -26,7 +26,7 @@ export const MainLayoutLangDropdown: FC = () => {
             [styles.active]: isDropdownVisible,
           })}
         >
-          <span className={styles.text}>English / USD</span>
+          <span className={styles.text}>Allison M.</span>
           <Icon
             name="ChevroneDown"
             className={cn(styles.chevron, { "rotate-180": isDropdownVisible })}
@@ -37,4 +37,4 @@ export const MainLayoutLangDropdown: FC = () => {
   );
 };
 
-export default MainLayoutLangDropdown;
+export default MainLayoutUserDropdown;

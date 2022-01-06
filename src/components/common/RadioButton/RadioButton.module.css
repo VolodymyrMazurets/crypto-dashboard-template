@@ -1,0 +1,17 @@
+.radio {
+  @apply rounded-full bg-n11 relative w-5 h-5 flex border-n11 cursor-pointer;
+}
+.input {
+  @apply sr-only;
+}
+.input:checked ~ .box {
+  opacity: 1;
+}
+.box {
+  @apply absolute bg-p5 rounded-full;
+  width: 10px;
+  height: 10px;
+  left: 5px;
+  top: 5px;
+  opacity: 0;
+}

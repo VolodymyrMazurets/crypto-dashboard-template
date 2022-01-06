@@ -5,6 +5,7 @@ export type IconType =
     | 'ArrowUp45'
     | 'BarChart'
     | 'BarChartV2'
+    | 'Binance'
     | 'Bitcoin'
     | 'BitcoinFilled'
     | 'BitcoinOutline'

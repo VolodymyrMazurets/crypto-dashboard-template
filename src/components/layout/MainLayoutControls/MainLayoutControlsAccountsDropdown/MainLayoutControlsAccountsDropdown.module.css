@@ -15,8 +15,22 @@
     @apply border-p2;
 }
 .text {
-  @apply text-n0 text-sm;
+  @apply flex items-center gap-3 text-n3 text-sm;
+}
+.logo {
+  @apply text-n0;
 }
 .chevron {
   @apply text-n2 w-5 transition-transform;
+}
+.content {
+}
+.title {
+  @apply text-sm text-n3 mb-6;
+}
+.row {
+  @apply flex items-center justify-between mb-6 last:mb-0;
+}
+.label {
+  @apply text-n0 text-sm;
 }

@@ -1,0 +1,14 @@
+.dropdown {
+  @apply flex
+    items-center
+    gap-3
+    px-4
+    outline-ts
+    transition-colors;
+}
+.text {
+  @apply text-n0 text-sm font-medium;
+}
+.chevron {
+  @apply text-n0 w-4 transition-transform;
+}

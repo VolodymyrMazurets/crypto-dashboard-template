@@ -4,6 +4,7 @@ export { ReactComponent as IconAction } from '../../../assets/svg/Action.svg';
   export { ReactComponent as IconArrowUp45 } from '../../../assets/svg/ArrowUp45.svg';
   export { ReactComponent as IconBarChart } from '../../../assets/svg/BarChart.svg';
   export { ReactComponent as IconBarChartV2 } from '../../../assets/svg/BarChartV2.svg';
+  export { ReactComponent as IconBinance } from '../../../assets/svg/Binance.svg';
   export { ReactComponent as IconBitcoin } from '../../../assets/svg/Bitcoin.svg';
   export { ReactComponent as IconBitcoinFilled } from '../../../assets/svg/BitcoinFilled.svg';
   export { ReactComponent as IconBitcoinOutline } from '../../../assets/svg/BitcoinOutline.svg';

@@ -1,0 +1,25 @@
+.toggle {
+  @apply flex items-center cursor-pointer relative;
+}
+.box {
+  @apply bg-n3 w-10 rounded-full;
+  height: 18px;
+}
+.box:after {
+  content: "";
+  @apply absolute top-0.5 left-0.5 rounded-full transition;
+  background: #d9d9e3;
+  width: 14px;
+  height: 14px;
+}
+.input {
+  @apply sr-only;
+}
+.input:checked + .box:after {
+  transform: translateX(160%);
+  @apply bg-n0;
+}
+
+.input:checked + .box {
+  @apply bg-p5;
+}
