@@ -2,8 +2,11 @@
   @apply flex items-center cursor-pointer relative;
 }
 .box {
-  @apply bg-n3 w-10 rounded-full;
+  @apply bg-n3 w-10 rounded-full border border-n3 transition-colors;
   height: 18px;
+}
+.toggle:hover .box {
+  @apply bg-switchHover;
 }
 .box:after {
   content: "";
@@ -15,11 +18,17 @@
 .input {
   @apply sr-only;
 }
+.input:focus + .box {
+  @apply border-p1 !important;
+}
 .input:checked + .box:after {
   transform: translateX(160%);
   @apply bg-n0;
 }
 
 .input:checked + .box {
-  @apply bg-p5;
+  @apply bg-p5 border-p5 hover:bg-switchCheckedHover;
+}
+.toggle:focus .box {
+  @apply border-p1 !important;
 }

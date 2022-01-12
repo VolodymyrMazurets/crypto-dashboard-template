@@ -1,8 +1,20 @@
+.text {
+  @apply text-n0 text-sm;
+}
+.chevron {
+  @apply text-n2 w-5 transition-transform;
+}
 
-  .text {
-    @apply text-n0 text-sm;
-  }
-  .chevron {
-    @apply text-n2 w-5 transition-transform;
-  }
-  
+.title {
+  @apply text-sm text-n3 mb-6;
+}
+.row {
+  @apply flex items-center justify-between mb-6 last:mb-0;
+}
+.label {
+  @apply text-n0 text-sm;
+}
+.footer {
+  @apply flex items-center justify-center border-t border-n5 pt-6;
+  margin: 0 -24px;
+}

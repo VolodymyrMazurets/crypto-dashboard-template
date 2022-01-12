@@ -1,4 +1,4 @@
-import React, { forwardRef, MouseEventHandler } from "react";
+import React, { forwardRef, MouseEventHandler, ReactNode } from "react";
 import cn from "classnames";
 import styles from "./Button.module.css";
 import { Icon, IconType } from "..";
@@ -11,6 +11,7 @@ interface IButtonProps {
   isBig?: boolean;
   type?: "primary" | "secondary" | "icon" | "success" | "danger";
   icon?: IconType;
+  children?: ReactNode;
 }
 
 export const Button = forwardRef<HTMLButtonElement, IButtonProps>(

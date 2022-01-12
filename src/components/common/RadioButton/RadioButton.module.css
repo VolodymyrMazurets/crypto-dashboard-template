@@ -1,17 +1,67 @@
 .radio {
-  @apply rounded-full bg-n11 relative w-5 h-5 flex border-n11 cursor-pointer;
+  @apply flex items-center gap-3 cursor-pointer;
+}
+.radio.disabled {
+  @apply cursor-not-allowed;
 }
 .input {
   @apply sr-only;
 }
 .input:checked ~ .box {
+  @apply border-p5 hover:border-p1 bg-ts;
+}
+.input:checked ~ .box::after {
   opacity: 1;
 }
 .box {
-  @apply absolute bg-p5 rounded-full;
+  @apply relative
+  rounded-full
+  bg-n11
+  w-5
+  h-5 
+  flex
+  border
+  border-n11
+  transition-colors
+  hover:border-p1
+  hover:after:bg-p1;
+}
+.box.disabled {
+  @apply bg-n11 border-n11;
+}
+.input:checked ~ .box.disabled {
+  @apply border-n7;
+}
+.input:checked ~ .box.disabled::after {
+  @apply bg-n7;
+}
+.box::after {
+  @apply absolute bg-p5 rounded-full transition-colors;
+  content: "";
   width: 10px;
   height: 10px;
-  left: 5px;
-  top: 5px;
+  left: 4px;
+  top: 4px;
   opacity: 0;
+}
+.label {
+  @apply text-sm;
+}
+.label.disabled {
+  @apply text-n4;
+}
+.labelWrapper {
+  @apply flex flex-col;
+}
+.labelGrey {
+  @apply text-sm text-n3;
+}
+.labelGrey.disabled {
+  @apply text-n4;
+}
+.icon {
+  @apply text-n0;
+}
+.icon.disabled {
+  @apply text-n4;
 }

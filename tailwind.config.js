@@ -35,6 +35,8 @@ module.exports = {
       r11: "#8C2438",
       bg1: "#100F18",
       ts: "transparent",
+      switchHover: '#807E97',
+      switchCheckedHover: '#7B61FF',
     },
     fontFamily: {
       primary: ["Inter", "sans-serif"],
