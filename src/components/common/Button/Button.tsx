@@ -9,6 +9,7 @@ interface IButtonProps {
   loading?: boolean;
   disabled?: boolean;
   isBig?: boolean;
+  isIconDark?: boolean;
   type?: "primary" | "secondary" | "icon" | "success" | "danger";
   icon?: IconType;
   children?: ReactNode;
@@ -25,6 +26,7 @@ export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
       type = "primary",
       icon = "Cross",
       onClick,
+      isIconDark,
     },
     ref
   ) => {
@@ -35,6 +37,7 @@ export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
         className={cn(styles.button, className, styles[type], {
           [styles.loading]: loading,
           [styles.big]: isBig,
+          [styles.dark]: isIconDark,
         })}
         disabled={disabled}
       >

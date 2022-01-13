@@ -1,0 +1,8 @@
+.home {
+    @apply flex items-stretch h-full;
+}
+.positions {
+    @apply h-full;
+    max-width: 500px;
+    flex: 1 1 25%;
+}

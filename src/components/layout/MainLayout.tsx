@@ -19,11 +19,11 @@ export const MainLayout: FC = ({ children }) => {
           </NavLink>
           <MainLayoutCoinButton isActive />
           <MainLayoutCoinButton icon="EthereumFilled" coin="ETH" />
-          <Button type="icon" icon="Plus" isBig />
+          <Button type="icon" icon="Plus" isBig isIconDark />
         </div>
         <div className={styles.wrapper}>
           <MainLayoutLangDropdown />
-          <Button type="icon" icon="Notification" />
+          <Button type="icon" icon="Notification" isIconDark />
           <MainLayoutUserDropdown />
         </div>
       </header>

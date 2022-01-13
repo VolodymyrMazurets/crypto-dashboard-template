@@ -1,5 +1,5 @@
 .layout {
-  @apply h-screen overflow-hidden;
+  @apply h-screen overflow-hidden flex flex-col;
 }
 .header {
   @apply p-6 border-n8 border relative flex justify-between items-center;
@@ -8,9 +8,9 @@
   @apply flex items-center gap-4;
 }
 .content {
-  @apply p-6 overflow-auto;
+  @apply p-6 overflow-auto flex-1 flex flex-col;
   height: calc(100vh - 106px);
 }
 .page {
-    padding-top: 24px;
+  @apply pt-6 flex-1;
 }

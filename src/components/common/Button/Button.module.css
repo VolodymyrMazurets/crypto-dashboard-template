@@ -42,6 +42,9 @@
 .button.icon.big {
   @apply w-14 h-14;
 }
+.button.icon.dark {
+  @apply bg-n11 border-n11 hover:bg-n8 hover:border-n8;
+}
 
 .button.success {
   @apply bg-g3

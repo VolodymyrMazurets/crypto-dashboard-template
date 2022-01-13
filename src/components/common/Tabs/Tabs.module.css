@@ -1,0 +1,19 @@
+.tabs {
+  @apply flex items-center w-full bg-n9 rounded-lg p-1;
+}
+.button {
+  @apply flex
+    flex-1
+    items-center
+    justify-center
+    text-sm
+    font-medium
+    transition-colors
+    rounded-lg
+    text-n3
+    hover:text-n0;
+  height: 33px;
+}
+.button.active {
+  @apply bg-p5 text-n0;
+}
