@@ -1,0 +1,55 @@
+.item {
+  @apply py-6 flex flex-col;
+}
+.head {
+  @apply flex justify-between items-center mb-6;
+}
+.title {
+  @apply text-sm;
+}
+.headWrapper {
+  @apply flex items-center gap-3;
+}
+.linkIcon {
+  @apply text-n0 
+    w-6
+    transition-colors
+    cursor-pointer
+    hover:text-n2;
+}
+.actionIcon {
+  @apply text-n3 
+    w-5
+    transition-colors
+    cursor-pointer
+    hover:text-n1;
+}
+.columns {
+  @apply grid grid-cols-7 gap-y-6 gap-x-2;
+}
+.column {
+  @apply flex flex-col gap-1;
+}
+.column:nth-child(3n - 1) {
+    @apply col-span-3;
+}
+.column:nth-child(3n - 2) {
+    @apply col-span-2;
+}
+.column:nth-child(3n) {
+    @apply col-span-2;
+}
+.columnTitle {
+    @apply text-sm text-n3; 
+}
+.columnValue {
+    @apply text-sm;
+}
+.dropdown {
+    @apply flex flex-col items-start justify-start gap-y-4;
+}
+.linkBtn {
+    @apply text-n0
+    text-sm
+    hover:text-n1;
+}
