@@ -1,0 +1,6 @@
+.controls {
+  @apply flex items-center gap-4;
+}
+.controlsIcon {
+  @apply text-n3 w-4 transition-colors cursor-pointer hover:text-n1;
+}

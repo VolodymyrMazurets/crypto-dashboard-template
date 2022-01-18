@@ -1,5 +1,5 @@
 .positions {
-  @apply bg-n11 rounded-2xl p-8 h-full;
+  @apply bg-n11 rounded-2xl p-8 h-full overflow-y-auto;
 }
 .head {
   @apply flex items-center justify-between mb-6;
