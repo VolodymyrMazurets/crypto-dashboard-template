@@ -9,11 +9,17 @@ interface ITabsProps {
   data: ITabsData;
   activeTab: string;
   onClick: (name: string) => void;
+  className?: string;
 }
 
-export const Tabs: FC<ITabsProps> = ({ data, activeTab, onClick }) => {
+export const Tabs: FC<ITabsProps> = ({
+  data,
+  activeTab,
+  onClick,
+  className,
+}) => {
   return (
-    <div className={styles.tabs}>
+    <div className={cn(styles.tabs, className)}>
       {map(data, (name) => {
         return (
           <button

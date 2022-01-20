@@ -1,5 +1,8 @@
 .wrapper {
-  @apply rounded-2xl bg-n11 w-full overflow-y-auto h-full p-8;
+  @apply rounded-2xl bg-n11 w-full overflow-y-auto h-full py-6;
+}
+.wrapper.withPadding {
+  @apply px-8;
 }
 .title {
   @apply text-lg font-semibold;

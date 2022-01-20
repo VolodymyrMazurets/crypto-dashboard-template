@@ -1,0 +1,23 @@
+.content {
+  @apply flex items-end;
+}
+.names {
+  @apply flex flex-col;
+}
+.namesCol {
+  @apply border-b border-n9 flex items-center;
+  height: 50px;
+}
+.namesValue {
+  @apply text-sm text-n3;
+}
+.values {
+    @apply flex-1 flex flex-col w-full;
+}
+.valuesCol {
+  @apply border-b border-n9 w-full flex items-center justify-end;
+  height: 50px;
+}
+.valuesValue {
+  @apply text-sm;
+}

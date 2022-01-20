@@ -6,6 +6,8 @@ interface IWidgetBlockProps {
   className?: string;
   renderHeaderControls?: ReactNode;
   title?: string;
+  withPadding?: boolean;
+  headerClassName?: string;
 }
 
 export const WidgetBlock: FC<IWidgetBlockProps> = ({
@@ -13,10 +15,16 @@ export const WidgetBlock: FC<IWidgetBlockProps> = ({
   className,
   title,
   renderHeaderControls,
+  withPadding = true,
+  headerClassName,
 }) => {
   return (
-    <div className={cn(styles.wrapper, className)}>
-      <div className={styles.header}>
+    <div
+      className={cn(styles.wrapper, className, {
+        [styles.withPadding]: withPadding,
+      })}
+    >
+      <div className={cn(styles.header, headerClassName)}>
         <h4 className={styles.title}>{title}</h4>
         {renderHeaderControls}
       </div>

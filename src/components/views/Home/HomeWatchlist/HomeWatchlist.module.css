@@ -1,1 +1,6 @@
-
+.header {
+  @apply px-8;
+}
+.tabWrapper {
+  @apply pt-4 pb-1 px-8;
+}

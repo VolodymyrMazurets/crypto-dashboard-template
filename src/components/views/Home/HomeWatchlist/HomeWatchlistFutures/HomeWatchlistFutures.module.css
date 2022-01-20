@@ -1,0 +1,44 @@
+.futures {
+  @apply flex flex-col w-full divide-y divide-n9 px-8;
+}
+.item {
+  @apply py-5;
+}
+.itemHead {
+  @apply flex items-center justify-between mb-4;
+}
+.headCoin {
+  @apply flex items-center gap-4;
+}
+.coin {
+  @apply fill-ts;
+}
+.headWrapper {
+  @apply flex flex-col;
+}
+.coinName {
+  @apply text-sm font-semibold;
+}
+.coinDescr {
+  @apply text-xs text-n3;
+}
+.exchange {
+  @apply h-8 flex justify-center items-center px-3 bg-n9 rounded-lg;
+}
+.itemContent {
+  @apply flex gap-3 items-center;
+}
+.itemCol {
+  @apply flex flex-col gap-y-1;
+  flex: 1 1 25%;
+}
+.itemName {
+  @apply text-n3 text-xs;
+  white-space: nowrap;
+}
+.itemValue {
+  @apply text-sm flex items-center;
+}
+.iconDropdown {
+  @apply w-4;
+}

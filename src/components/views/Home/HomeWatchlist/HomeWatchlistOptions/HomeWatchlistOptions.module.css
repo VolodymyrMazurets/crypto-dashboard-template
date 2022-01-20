@@ -1,0 +1,28 @@
+.options {
+  display: block;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.table {
+  @apply w-full;
+  border-spacing: 0;
+}
+.tableHeadRowCol {
+  @apply text-xs text-n3 pb-4 px-4 first:px-8;
+  text-align: left;
+}
+.tableBody {
+}
+.tableBodyRow {
+  @apply odd:bg-n8;
+}
+.tableBodyRowCol {
+  @apply text-sm text-n0 py-5 px-4 first:px-8 whitespace-nowrap;
+}
+.tableBodyRowCol.bid {
+    @apply text-g2;
+}
+.tableBodyRowCol.ask {
+    @apply text-r1;
+}
