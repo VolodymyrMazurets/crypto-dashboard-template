@@ -1,0 +1,52 @@
+.futures {
+  @apply flex flex-col h-full;
+}
+.tableWrapper {
+    @apply flex-1 h-full overflow-auto;
+}
+.table {
+  @apply w-full overflow-auto;
+  max-width: 100%;
+}
+.tableHeadRowCol {
+  @apply text-xs text-n3 font-normal pb-4 px-4 first:px-6;
+  text-align: left;
+}
+.tableBody {
+}
+.tableBodyRow {
+  @apply border-b border-t border-ts odd:bg-n8 cursor-pointer relative;
+}
+.tableBodyRowCol {
+  @apply text-sm text-n0 font-normal py-4 px-4 first:px-6 whitespace-nowrap;
+}
+.tableBodyRow.active td {
+    @apply border-p5 border-t border-b;
+  }
+.ticker {
+  @apply flex items-center gap-3;
+}
+.value {
+  @apply text-sm text-n0 font-normal;
+}
+.daily {
+  @apply flex items-center gap-2;
+}
+.value.colored {
+  @apply text-g2;
+}
+.value.colored.red {
+  @apply text-r1;
+}
+.arrow {
+  @apply text-g2;
+}
+.arrow.red {
+  @apply text-r1;
+}
+.exchange {
+  @apply h-8 flex justify-center items-center px-1 bg-n7 rounded-lg;
+}
+.footer {
+    @apply flex justify-end gap-4 py-8;
+}

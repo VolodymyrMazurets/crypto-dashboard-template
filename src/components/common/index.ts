@@ -5,3 +5,6 @@ export * from "./Switch";
 export * from "./Tabs";
 export * from "./WidgetBlock";
 export * from "./WidgetControls";
+export * from "./LineChartTemplate";
+export * from "./ModalWindow";
+export * from "./GroupFilter";

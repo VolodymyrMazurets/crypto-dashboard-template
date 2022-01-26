@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { WidgetBlock, WidgetControls } from "src/components/common";
 import styles from "./HomeDaily.module.css";
+import { HomeDailyChart } from "./HomeDailyChart";
 
 export const HomeDaily: FC = () => {
   return (
@@ -9,7 +10,7 @@ export const HomeDaily: FC = () => {
       renderHeaderControls={<WidgetControls buttonIcon="Scales" />}
       className={styles.homeDaily}
     >
-      Daily
+      <HomeDailyChart />
     </WidgetBlock>
   );
 };

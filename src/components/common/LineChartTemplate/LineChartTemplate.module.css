@@ -1,0 +1,15 @@
+.tooltip {
+    @apply py-2 px-3 rounded-lg;
+    background: #252533;
+    box-shadow: 0px 4px 32px rgba(22, 21, 25, 0.41);
+    min-width: 130px;
+  }
+  .label {
+    @apply text-n3 text-xs pb-1;
+  }
+  .value {
+    @apply text-sm font-semibold flex items-center gap-1;
+  }
+  .subvalue {
+    @apply text-n2 text-xs;
+  }

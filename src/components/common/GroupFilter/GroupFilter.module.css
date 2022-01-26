@@ -1,0 +1,28 @@
+.filter {
+  @apply flex gap-6;
+}
+.button {
+  @apply h-10
+    px-8
+    inline-flex
+    items-center
+    rounded-lg
+    border
+    outline-none
+    transition-colors
+    text-p3
+    font-medium
+    text-sm
+    uppercase
+    bg-p8
+    border-p8
+    hover:bg-p7
+    hover:border-p7
+    active:bg-p9
+    active:border-p9;
+}
+.button.inactive {
+  @apply bg-n6
+    border-n6
+    text-n3
+}

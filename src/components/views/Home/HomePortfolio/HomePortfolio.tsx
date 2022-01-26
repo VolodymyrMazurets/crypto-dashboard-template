@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { WidgetBlock, WidgetControls } from "src/components/common";
+import { HomeDailyChart } from "../HomeDaily/HomeDailyChart";
 import styles from "./HomePortfolio.module.css";
 
 export const HomePortfolio: FC = () => {
@@ -9,7 +10,7 @@ export const HomePortfolio: FC = () => {
       renderHeaderControls={<WidgetControls buttonIcon="Scales" />}
       className={styles.portfolio}
     >
-      HomePortfolio
+      <HomeDailyChart />
     </WidgetBlock>
   );
 };

@@ -4,3 +4,6 @@
 .tabWrapper {
   @apply pt-4 pb-1 px-8;
 }
+.features {
+  /* height: 200vh; */
+}

@@ -1,0 +1,17 @@
+.chart {
+}
+.head {
+  @apply flex items-end gap-3;
+}
+.value {
+  @apply font-semibold text-2xl;
+}
+.percents {
+  @apply flex items-center text-xs text-g2;
+}
+.icon {
+  @apply w-4;
+}
+.chartWrapper {
+  height: 284px;
+}
