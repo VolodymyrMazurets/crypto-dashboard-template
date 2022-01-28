@@ -1,0 +1,143 @@
+.options {
+  @apply w-full overflow-auto h-full;
+}
+.head {
+  @apply sticky top-0;
+  z-index: 2;
+}
+.headWrapper {
+  @apply flex items-center px-6 bg-n10;
+}
+.headValue {
+  @apply flex-1 text-xs text-n3 pr-2 bg-n10;
+  min-width: 60px;
+}
+
+.headValue:nth-child(12) {
+  width: 129px;
+  min-width: 129px;
+  @apply text-center;
+}
+.headValue:nth-child(10),
+.headValue:nth-child(23) {
+  min-width: 120px;
+  width: 120px;
+}
+.headValue:nth-child(2),
+.headValue:nth-child(6),
+.headValue:nth-child(4),
+.headValue:nth-child(5),
+.headValue:nth-child(16),
+.headValue:nth-child(17),
+.headValue:nth-child(18),
+.headValue:nth-child(19) {
+  min-width: 70px;
+  width: 70px;
+}
+.headValue:nth-child(3) {
+  min-width: 90px;
+  width: 90px;
+}
+.headValue:nth-child(13) {
+  @apply pl-6;
+  min-width: 80px;
+  width: 80px;
+}
+.item {
+  @apply flex items-center relative py-5 px-6;
+}
+.icon {
+  @apply w-5 absolute left-6 transition-transform;
+}
+.item[aria-expanded="true"] .icon {
+  @apply rotate-90;
+}
+.date {
+  @apply flex-1 px-2 text-sm font-medium flex items-center;
+}
+.date.first {
+  @apply relative left-8;
+}
+.date.centered {
+  flex-basis: 120px;
+  @apply justify-center;
+}
+.date.end {
+  @apply justify-end;
+}
+.exchange {
+  @apply h-8 flex justify-center items-center px-1 bg-n7 rounded-lg;
+  width: 100px;
+}
+.row {
+  @apply flex items-center pl-6 odd:bg-n8 even:bg-n11;
+  height: 60px;
+}
+.tableItem,
+.tableItemSecond {
+  @apply flex-1 text-sm text-n0 pr-2 flex flex-col justify-center;
+  min-width: 60px;
+  width: 60px;
+}
+.tableItem.greenItem,
+.tableItemSecond.greenItem {
+  @apply text-g1;
+}
+.tableItem:nth-child(10),
+.tableItemSecond:nth-child(11) {
+  min-width: 120px;
+  width: 120px;
+}
+.tableItem:nth-child(3),
+.tableItem:nth-child(4) {
+  min-width: 90px;
+  width: 90px;
+}
+.tableItem:nth-child(2),
+.tableItem:nth-child(6),
+.tableItem:nth-child(4),
+.tableItem:nth-child(5) {
+  min-width: 70px;
+  width: 70px;
+}
+.tableItemSecond:nth-child(1) {
+  min-width: 60px;
+  width: 60px;
+}
+.tableItemSecond:nth-child(4),
+.tableItemSecond:nth-child(5),
+.tableItemSecond:nth-child(6),
+.tableItemSecond:nth-child(7) {
+  min-width: 70px;
+  width: 70px;
+}
+.value {
+}
+.value.green {
+  @apply text-g2;
+}
+.value.red {
+  @apply text-r1;
+}
+.percents {
+  @apply text-sm text-n2;
+}
+.tableItem.redItem {
+}
+.panel {
+  @apply flex;
+}
+.table {
+  @apply flex-1;
+}
+.btc {
+  flex: 0 0 129px;
+}
+.btcItem {
+  @apply flex items-center justify-center text-sm font-medium;
+  height: 60px;
+}
+.accordion {
+  @apply divide-y divide-n9;
+  z-index: 1;
+}

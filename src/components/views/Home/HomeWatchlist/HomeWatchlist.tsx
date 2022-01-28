@@ -14,6 +14,7 @@ import styles from "./HomeWatchlist.module.css";
 import { HomeWatchlistFutures } from "./HomeWatchlistFutures";
 import { HomeWatchlistFuturesModal } from "./HomeWatchlistFutures/HomeWatchlistFuturesModal";
 import { HomeWatchlistOptions } from "./HomeWatchlistOptions";
+import { HomeWatchlistOptionsModal } from "./HomeWatchlistOptions/HomeWatchlistOptionsModal";
 
 const tabsData = ["Futures", "Options"];
 const filtersData: IGroupItemType[] = [
@@ -65,8 +66,6 @@ export const HomeWatchlist: FC = () => {
       : dispatch(toggleOptionModal());
   }, [activeTab, dispatch]);
 
-  console.log(activeValues);
-
   return (
     <WidgetBlock
       withPadding={false}
@@ -97,7 +96,7 @@ export const HomeWatchlist: FC = () => {
         onClose={() => dispatch(toggleOptionModal())}
         title="Options"
       >
-        modal
+        <HomeWatchlistOptionsModal />
       </ModalWindow>
       <div className={styles.tabWrapper}>
         <Tabs
