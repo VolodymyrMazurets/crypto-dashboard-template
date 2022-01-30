@@ -28,7 +28,7 @@ const routes: { to: string; icon: IconType; label: string }[] = [
   {
     to: "analytics",
     icon: "PieChart",
-    label: "Options",
+    label: "Analytics",
   },
   {
     to: "trading-sandbox",

@@ -1,0 +1,24 @@
+.oprions {
+}
+.head {
+  @apply flex justify-between items-center mb-6;
+}
+.chevrone {
+  @apply text-n2 w-5 relative;
+  top: 1px;
+}
+.dropdownButton {
+  @apply h-10 px-4 text-sm bg-n11 rounded-lg flex items-center gap-2;
+}
+.optionsHead {
+  @apply px-6 mb-6;
+}
+.content {
+  @apply flex flex-wrap gap-4;
+}
+.options {
+  @apply flex-1 basis-full max-w-full;
+}
+.tabsBlock {
+  @apply flex-1 basis-full max-w-full;
+}

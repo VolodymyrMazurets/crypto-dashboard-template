@@ -1,4 +1,4 @@
-import { map, range } from "lodash";
+import { map, random, range } from "lodash";
 import React, { FC } from "react";
 import cn from "classnames";
 import {
@@ -9,17 +9,17 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import styles from "./HomeWatchlistOptionsModal.module.css";
-import { Icon } from "src/components/common";
+import { Icon, IconType } from "src/components/common";
 
 import "react-accessible-accordion/dist/fancy-example.css";
 
 const headValues = [
   "Size",
-  "IV",
+  "IV (Bid)",
   "Bid",
   "Mark",
   "Ask",
-  "IV",
+  "IV (Ask)",
   "Size",
   "Open",
   "Delta",
@@ -28,31 +28,50 @@ const headValues = [
   "Strike",
   "Position",
   "Size",
-  "IV",
+  "IV (Bid)",
   "Bid",
   "Mark",
   "Ask",
-  "IV",
+  "IV (Ask)",
   "Size",
   "Open",
   "Delta",
   "Exchange",
 ];
 
-export const HomeWatchlistOptionsModal: FC = () => {
+interface IHomeWatchlistOptionsModalProps {
+  headBg?: string;
+}
+
+export const HomeWatchlistOptionsModal: FC<IHomeWatchlistOptionsModalProps> = ({
+  headBg = "bg-n10",
+}) => {
+  const getIcon = () => {
+    const randomNumber = random(1, 3);
+    if (randomNumber === 1) {
+      return "Binance";
+    }
+    if (randomNumber === 2) {
+      return "Deribit";
+    }
+    if (randomNumber === 3) {
+      return "FTX";
+    }
+  };
+
   return (
     <div className={styles.options}>
-      <div className={styles.head}>
+      <div className={cn(styles.head, headBg)}>
         <div className={styles.headWrapper}>
           {map(headValues, (item, idx) => (
-            <div key={item + idx} className={styles.headValue}>
+            <div key={item + idx} className={cn(styles.headValue, headBg)}>
               {item}
             </div>
           ))}
         </div>
       </div>
       <div className={styles.content}>
-        <Accordion allowZeroExpanded className={styles.accordion}>
+        <Accordion allowZeroExpanded className={styles.accordion} allowMultipleExpanded>
           {map(range(4), (item) => (
             <AccordionItem key={item} className={styles.accordionItem}>
               <AccordionItemHeading>
@@ -72,8 +91,8 @@ export const HomeWatchlistOptionsModal: FC = () => {
               <AccordionItemPanel style={{ padding: 0 }}>
                 <div className={styles.panel}>
                   <div className={styles.table}>
-                    {map(range(4), (item) => (
-                      <div key={item} className={styles.row}>
+                    {map(range(4), (item, idx) => (
+                      <div key={item + idx} className={styles.row}>
                         <div className={styles.tableItem}>18.0</div>
                         <div className={styles.tableItem}>64.02%</div>
                         <div className={styles.tableItem}>
@@ -98,7 +117,10 @@ export const HomeWatchlistOptionsModal: FC = () => {
                         <div className={styles.tableItem}>1.00</div>
                         <div className={styles.tableItem}>
                           <div className={styles.exchange}>
-                            <Icon name="Binance" className={styles.binance} />
+                            <Icon
+                              name={getIcon() as IconType}
+                              className={styles.binance}
+                            />
                           </div>
                         </div>
                         <div className={cn(styles.tableItem, styles.greenItem)}>
@@ -144,7 +166,9 @@ export const HomeWatchlistOptionsModal: FC = () => {
                           </span>
                           <span className={styles.percents}>103.28%</span>
                         </div>
-                        <div className={cn(styles.tableItemSecond)}>102.82%</div>
+                        <div className={cn(styles.tableItemSecond)}>
+                          102.82%
+                        </div>
                         <div className={cn(styles.tableItemSecond)}>5.7</div>
                         <div className={cn(styles.tableItemSecond)}>-</div>
                         <div className={cn(styles.tableItemSecond)}>1.00</div>

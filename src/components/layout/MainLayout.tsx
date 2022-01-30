@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { Button, Icon } from "../common";
 import styles from "./MainLayout.module.css";
 import { MainLayoutCoinButton } from "./MainLayoutCoinButton";
-import { MainLayoutControls } from "./MainLayoutControls";
 import { MainLayoutLangDropdown } from "./MainLayoutLangDropdown";
 import { MainLayoutSidebar } from "./MainLayoutSidebar";
 import { MainLayoutUserDropdown } from "./MainLayoutUserDropdown";
@@ -28,7 +27,6 @@ export const MainLayout: FC = ({ children }) => {
         </div>
       </header>
       <div className={styles.content}>
-        <MainLayoutControls />
         <div className={styles.page}>{children}</div>
       </div>
     </div>

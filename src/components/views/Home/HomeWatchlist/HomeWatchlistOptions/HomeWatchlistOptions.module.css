@@ -12,17 +12,22 @@
   @apply text-xs text-n3 pb-4 px-4 first:px-8;
   text-align: left;
 }
-.tableBody {
-}
 .tableBodyRow {
   @apply odd:bg-n8;
 }
 .tableBodyRowCol {
   @apply text-sm text-n0 py-5 px-4 first:px-8 whitespace-nowrap;
 }
+.tableBodyRowCol:nth-child(11) {
+  width: 130px;
+  min-width: 130px;
+}
 .tableBodyRowCol.bid {
     @apply text-g2;
 }
 .tableBodyRowCol.ask {
     @apply text-r1;
+}
+.exchange {
+  @apply h-8 flex justify-center items-center px-1 bg-n7 rounded-lg;
 }

@@ -12,15 +12,17 @@ interface IGroupFilterProps {
   data: IGroupItemType[];
   activeValues: string[];
   onItemClick: (value: string) => void;
+  className?: string;
 }
 
 export const GroupFilter: FC<IGroupFilterProps> = ({
   data,
   activeValues,
   onItemClick,
+  className,
 }) => {
   return (
-    <div className={styles.filter}>
+    <div className={classNames(styles.filter, className)}>
       {map(data, ({ value, name }) => (
         <button
           key={value}

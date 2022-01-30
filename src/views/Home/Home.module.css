@@ -30,3 +30,6 @@
   height: 420px;
   overflow: hidden;
 }
+.controls {
+  @apply mb-7;
+}

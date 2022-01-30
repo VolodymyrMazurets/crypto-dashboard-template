@@ -23,22 +23,25 @@ export const HomeWatchlistFutures: FC = () => {
             </div>
           </div>
           <div className={styles.itemContent}>
-              <div className={styles.itemCol}>
-                  <span className={styles.itemName}>24h Volume</span>
-                  <span className={styles.itemValue}>$3,823,273,273.72</span>
-              </div>
-              <div className={styles.itemCol}>
-                  <span className={styles.itemName}>Price</span>
-                  <span className={styles.itemValue}>48,723</span>
-              </div>
-              <div className={styles.itemCol}>
-                  <span className={styles.itemName}>Daily Change</span>
-                  <span className={styles.itemValue}><Icon name="Dropdown" className={styles.iconDropdown} />5,95%</span>
-              </div>
-              <div className={styles.itemCol}>
-                  <span className={styles.itemName}>Open Interest</span>
-                  <span className={styles.itemValue}>$2,736,273,273.72</span>
-              </div>
+            <div className={styles.itemCol}>
+              <span className={styles.itemName}>24h Volume</span>
+              <span className={styles.itemValue}>$3,823,273,273.72</span>
+            </div>
+            <div className={styles.itemCol}>
+              <span className={styles.itemName}>Price</span>
+              <span className={styles.itemValue}>48,723</span>
+            </div>
+            <div className={styles.itemCol}>
+              <span className={styles.itemName}>Daily Change</span>
+              <span className={styles.itemValue}>
+                <Icon name="Dropdown" className={styles.iconDropdown} />
+                5,95%
+              </span>
+            </div>
+            <div className={styles.itemCol}>
+              <span className={styles.itemName}>Open Interest</span>
+              <span className={styles.itemValue}>$2,736,273,273.72</span>
+            </div>
           </div>
         </div>
       ))}

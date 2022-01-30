@@ -1,8 +1,9 @@
-import { map, range } from "lodash";
+import { map, random, range } from "lodash";
 import React, { FC, useMemo } from "react";
 import { useTable } from "react-table";
 import cn from "classnames";
 import styles from "./HomeWatchlistOptions.module.css";
+import { Icon, IconType } from "src/components/common";
 
 export const HomeWatchlistOptions: FC = () => {
   const columns = useMemo(
@@ -19,7 +20,7 @@ export const HomeWatchlistOptions: FC = () => {
             accessor: "size",
           },
           {
-            Header: "IV",
+            Header: "IV (Bid)",
             accessor: "iv",
           },
           {
@@ -37,7 +38,7 @@ export const HomeWatchlistOptions: FC = () => {
             className: styles.ask,
           },
           {
-            Header: "IV",
+            Header: "IV (Ask)",
             accessor: "iv2",
           },
           {
@@ -55,6 +56,14 @@ export const HomeWatchlistOptions: FC = () => {
           {
             Header: "Exchange",
             accessor: "exchange",
+            Cell: (props: { value: string }) => {
+              const { value } = props;
+              return (
+                <div className={styles.exchange}>
+                  <Icon name={value as IconType} className={styles.binance} />
+                </div>
+              );
+            },
           },
           {
             Header: "Strike",
@@ -68,20 +77,34 @@ export const HomeWatchlistOptions: FC = () => {
 
   const data = useMemo(
     () =>
-      map(range(4), () => ({
-        name: "BTC-10DEC2021-57000C.0",
-        size: "18.0",
-        iv: "64.02%",
-        bid: "0.7363",
-        mark: "0.7363",
-        ask: "0.2372",
-        iv2: "102.82%",
-        size2: "5.7",
-        open: "-",
-        delta: "1.00",
-        exchange: "binance",
-        strike: "35,828.29",
-      })),
+      map(range(10), () => {
+        const getIcon = () => {
+          const randomNumber = random(1, 3);
+          if (randomNumber === 1) {
+            return "Binance";
+          }
+          if (randomNumber === 2) {
+            return "Deribit";
+          }
+          if (randomNumber === 3) {
+            return "FTX";
+          }
+        };
+        return {
+          name: "BTC-10DEC2021-57000C.0",
+          size: "18.0",
+          iv: "64.02%",
+          bid: "0.7363",
+          mark: "0.7363",
+          ask: "0.2372",
+          iv2: "102.82%",
+          size2: "5.7",
+          open: "-",
+          delta: "1.00",
+          exchange: getIcon(),
+          strike: "35,828.29",
+        };
+      }),
     []
   );
 

@@ -6,37 +6,43 @@ import {
   HomePositions,
   HomeWatchlist,
 } from "src/components";
+import { MainLayoutControls } from "src/components/layout/MainLayoutControls";
 import { HomeMarginRatio } from "src/components/views/Home/HomeMarginRatio";
 import styles from "./Home.module.css";
 
 export const Home: FC = () => {
   return (
-    <div className={styles.home}>
-      <div className={styles.positions}>
-        <HomePositions />
+    <>
+      <div className={styles.controls}>
+        <MainLayoutControls />
       </div>
-      <div className={styles.rightBlock}>
-        <div className={styles.account}>
-          <HomeAccountSummary />
+      <div className={styles.home}>
+        <div className={styles.positions}>
+          <HomePositions />
         </div>
-        <div className={styles.row}>
-          <div className={styles.half}>
-            <HomeDaily />
+        <div className={styles.rightBlock}>
+          <div className={styles.account}>
+            <HomeAccountSummary />
           </div>
-          <div className={styles.half}>
-            <HomeWatchlist />
+          <div className={styles.row}>
+            <div className={styles.half}>
+              <HomeDaily />
+            </div>
+            <div className={styles.half}>
+              <HomeWatchlist />
+            </div>
           </div>
-        </div>
-        <div className={styles.row}>
-          <div className={styles.half}>
-            <HomePortfolio />
-          </div>
-          <div className={styles.half}>
-            <HomeMarginRatio />
+          <div className={styles.row}>
+            <div className={styles.half}>
+              <HomePortfolio />
+            </div>
+            <div className={styles.half}>
+              <HomeMarginRatio />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

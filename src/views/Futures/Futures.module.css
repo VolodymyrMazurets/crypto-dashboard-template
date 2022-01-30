@@ -1,0 +1,23 @@
+.head {
+  @apply flex justify-between items-center mb-6;
+}
+.chevrone {
+  @apply text-n2 w-5 relative;
+  top: 1px;
+}
+.dropdownButton {
+  @apply h-10 px-4 text-sm bg-n11 rounded-lg flex items-center gap-2;
+}
+.content {
+  @apply bg-n11 rounded-2xl;
+}
+.contentHead {
+    @apply p-6 relative;
+}
+.title {
+    @apply text-lg font-semibold;
+}
+.filters {
+    @apply absolute left-2/4 top-2/4;
+    transform: translate(-50%, -50%);
+}
