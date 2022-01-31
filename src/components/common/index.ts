@@ -8,3 +8,4 @@ export * from "./WidgetControls";
 export * from "./LineChartTemplate";
 export * from "./ModalWindow";
 export * from "./GroupFilter";
+export * from "./Input";

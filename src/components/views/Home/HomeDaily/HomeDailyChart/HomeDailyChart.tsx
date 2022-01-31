@@ -1,39 +1,46 @@
-import React, { FC } from "react";
-import { Icon, LineChartTemplate } from "src/components/common";
+import { random } from "lodash";
+import React, { FC, useMemo } from "react";
+import { Icon, LineChartTemplate, PeriodType } from "src/components/common";
 import styles from "./HomeDailyChart.module.css";
 
-const data: { [key: string]: number | string }[] = [
-  {
-    date: "1",
-    value: 1.4,
-  },
-  {
-    date: "3",
-    value: 0.5,
-  },
-  {
-    date: "5",
-    value: 1,
-  },
-  {
-    date: "10",
-    value: -1,
-  },
-  {
-    date: "15",
-    value: 0.9,
-  },
-  {
-    date: "20",
-    value: -1,
-  },
-  {
-    date: "25",
-    value: 0.8,
-  },
-];
+interface IHomeDailyChartProps {
+  activePeriod?: PeriodType;
+}
 
-export const HomeDailyChart: FC = () => {
+export const HomeDailyChart: FC<IHomeDailyChartProps> = ({ activePeriod }) => {
+  const data: { [key: string]: number | string }[] = useMemo(() => {
+    return [
+      {
+        date: "1",
+        value: random(-1, 2),
+      },
+      {
+        date: "3",
+        value: random(-1, 2),
+      },
+      {
+        date: "5",
+        value: random(-1, 2),
+      },
+      {
+        date: "10",
+        value: random(-1, 2),
+      },
+      {
+        date: "15",
+        value: random(-1, 2),
+      },
+      {
+        date: "20",
+        value: random(-1, 2),
+      },
+      {
+        date: "25",
+        value: random(-1, 2),
+      },
+    ];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activePeriod]);
   return (
     <div className={styles.chart}>
       <div className={styles.head}>

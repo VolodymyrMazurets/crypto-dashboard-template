@@ -41,10 +41,12 @@ const headValues = [
 
 interface IHomeWatchlistOptionsModalProps {
   headBg?: string;
+  onClick?: () => void;
 }
 
 export const HomeWatchlistOptionsModal: FC<IHomeWatchlistOptionsModalProps> = ({
   headBg = "bg-n10",
+  onClick,
 }) => {
   const getIcon = () => {
     const randomNumber = random(1, 3);
@@ -71,7 +73,11 @@ export const HomeWatchlistOptionsModal: FC<IHomeWatchlistOptionsModalProps> = ({
         </div>
       </div>
       <div className={styles.content}>
-        <Accordion allowZeroExpanded className={styles.accordion} allowMultipleExpanded>
+        <Accordion
+          allowZeroExpanded
+          className={styles.accordion}
+          allowMultipleExpanded
+        >
           {map(range(4), (item) => (
             <AccordionItem key={item} className={styles.accordionItem}>
               <AccordionItemHeading>
@@ -90,7 +96,7 @@ export const HomeWatchlistOptionsModal: FC<IHomeWatchlistOptionsModalProps> = ({
               </AccordionItemHeading>
               <AccordionItemPanel style={{ padding: 0 }}>
                 <div className={styles.panel}>
-                  <div className={styles.table}>
+                  <div className={styles.table} onClick={onClick}>
                     {map(range(4), (item, idx) => (
                       <div key={item + idx} className={styles.row}>
                         <div className={styles.tableItem}>18.0</div>
@@ -137,7 +143,7 @@ export const HomeWatchlistOptionsModal: FC<IHomeWatchlistOptionsModalProps> = ({
                       </div>
                     ))}
                   </div>
-                  <div className={styles.table}>
+                  <div className={styles.table} onClick={onClick}>
                     {map(range(4), (item) => (
                       <div key={item} className={styles.row}>
                         <div

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
 import "./theme/index.css";
 import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -9,11 +10,18 @@ import store from "./store";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <Auth0Provider
+      domain="dev-6rz0onkx.us.auth0.com"
+      clientId="eNkP9NuDpHozXiMtY3aV0C0gEUBVbXCU"
+      redirectUri={window.location.origin}
+      cacheLocation="localstorage"
+    >
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

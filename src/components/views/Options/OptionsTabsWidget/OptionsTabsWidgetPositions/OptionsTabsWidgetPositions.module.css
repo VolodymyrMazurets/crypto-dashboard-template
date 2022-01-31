@@ -1,0 +1,33 @@
+.positions {
+    display: block;
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .table {
+    @apply w-full;
+    border-spacing: 0;
+  }
+  .tableHeadRowCol {
+    @apply text-xs text-n3 pb-4 px-4 first:px-8;
+    text-align: left;
+  }
+  .tableBodyRow {
+    @apply odd:bg-n8;
+  }
+  .tableBodyRowCol {
+    @apply text-sm text-n0 py-5 px-4 first:px-8 whitespace-nowrap;
+  }
+  .tableBodyRowCol:nth-child(17) {
+      min-width: 140px;
+  }
+  .tableBodyRowCol.green {
+      @apply text-g2;
+  }
+  .tableBodyRowCol.red {
+      @apply text-r1;
+  }
+  .exchange {
+    @apply h-8 flex justify-center items-center px-1 bg-n7 rounded-lg;
+  }
+  

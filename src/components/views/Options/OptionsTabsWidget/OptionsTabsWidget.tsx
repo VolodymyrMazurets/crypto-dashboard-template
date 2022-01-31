@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { Tabs } from "src/components/common";
 import styles from "./OptionsTabsWidget.module.css";
+import { OptionsTabsWidgetPositions } from "./OptionsTabsWidgetPositions";
 
 export const OptionsTabsWidget: FC = () => {
   const [activeTab, setActiveTab] = useState("Positions");
@@ -8,7 +9,7 @@ export const OptionsTabsWidget: FC = () => {
   const renderTab = () => {
     switch (activeTab) {
       case "Positions":
-        return <div>positions</div>;
+        return <OptionsTabsWidgetPositions />;
 
       default:
         return <div>tab</div>;

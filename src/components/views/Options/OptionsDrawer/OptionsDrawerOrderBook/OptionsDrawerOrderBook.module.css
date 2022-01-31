@@ -1,0 +1,51 @@
+.order {
+  @apply pt-7;
+}
+.head {
+  @apply flex items-center divide-x divide-n7;
+}
+
+.wrapper {
+  @apply flex
+  flex-col
+  items-start
+  flex-1
+  basis-1/5
+  justify-center
+  pl-7
+  first:justify-start
+  first:items-start
+  first:pl-0
+  last:justify-end last:items-end;
+}
+.name {
+  @apply text-xs text-n3;
+}
+.value {
+  @apply text-sm;
+}
+.summary {
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 0 -32px 24px;
+}
+.table {
+  @apply w-full;
+}
+.tableHeadRowCol {
+  @apply text-xs text-n3 pb-4 px-4 first:px-8;
+  text-align: left;
+}
+.tableBodyRow {
+  @apply odd:bg-n8;
+}
+.tableBodyRowCol {
+  @apply text-sm text-n0 py-5 px-4 first:px-8 whitespace-nowrap;
+}
+.tableBodyRowCol.green {
+  @apply text-g2;
+}
+.tableBodyRowCol.red {
+  @apply text-r1;
+}

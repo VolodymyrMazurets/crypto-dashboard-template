@@ -20,5 +20,13 @@
   @apply flex-1 basis-full max-w-full;
 }
 .tabsBlock {
-  @apply flex-1 basis-full max-w-full;
+  @apply flex-1 basis-full max-w-full overflow-hidden;
+  height: 444px;
+}
+.half {
+  @apply overflow-hidden;
+  height: 485px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: calc(50% - 8px);
 }

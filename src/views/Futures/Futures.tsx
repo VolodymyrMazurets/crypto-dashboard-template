@@ -3,6 +3,7 @@ import React, { FC, useState } from "react";
 import { GroupFilter, Icon, IGroupItemType } from "src/components/common";
 import { HomeWatchlistFuturesModal } from "src/components/views/Home/HomeWatchlist/HomeWatchlistFutures/HomeWatchlistFuturesModal";
 import styles from "./Futures.module.css";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 
 const filtersData: IGroupItemType[] = [
   {
@@ -27,7 +28,7 @@ const filtersData: IGroupItemType[] = [
   },
 ];
 
-export const Futures: FC = () => {
+export const Futures: FC = withAuthenticationRequired(() => {
   const [activeValues, setActiveValues] = useState(
     map(filtersData, ({ value }) => value)
   );
@@ -52,6 +53,6 @@ export const Futures: FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Futures;

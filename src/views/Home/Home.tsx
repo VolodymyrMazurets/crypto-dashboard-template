@@ -9,8 +9,9 @@ import {
 import { MainLayoutControls } from "src/components/layout/MainLayoutControls";
 import { HomeMarginRatio } from "src/components/views/Home/HomeMarginRatio";
 import styles from "./Home.module.css";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 
-export const Home: FC = () => {
+export const Home: FC = withAuthenticationRequired(() => {
   return (
     <>
       <div className={styles.controls}>
@@ -44,6 +45,6 @@ export const Home: FC = () => {
       </div>
     </>
   );
-};
+});
 
 export default Home;

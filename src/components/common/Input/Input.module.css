@@ -1,0 +1,21 @@
+.wrapper {
+  @apply flex flex-col;
+}
+.label {
+  @apply font-medium text-sm mb-3;
+}
+.input {
+  @apply bg-n11
+    rounded-lg
+    outline-none
+    text-n0
+    border-2
+    transition-colors
+    pl-3
+    pr-14
+    border-n11
+    hover:bg-n10
+    hover:border-n10
+    focus:border-p2;
+  height: 40px;
+}

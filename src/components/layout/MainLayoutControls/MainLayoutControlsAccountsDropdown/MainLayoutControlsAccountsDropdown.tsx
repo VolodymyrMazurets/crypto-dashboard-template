@@ -7,7 +7,14 @@ import "./MainLayoutControlsAccountsDropdown.css";
 import "rc-tooltip/assets/bootstrap.css";
 import { useState } from "react";
 
-export const MainLayoutControlsAccountsDropdown: FC = () => {
+interface IMainLayoutControlsAccountsDropdownProps {
+  isLight?: boolean;
+  className?: string;
+}
+
+export const MainLayoutControlsAccountsDropdown: FC<
+  IMainLayoutControlsAccountsDropdownProps
+> = ({ isLight, className }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const dropdownContent = (
@@ -44,7 +51,11 @@ export const MainLayoutControlsAccountsDropdown: FC = () => {
         afterVisibleChange={(v) => setIsDropdownVisible(v)}
         overlayInnerStyle={{ width: 345 }}
       >
-        <button className={cn(styles.dropdown)}>
+        <button
+          className={cn(styles.dropdown, className, {
+            [styles.light]: isLight,
+          })}
+        >
           <span className={styles.text}>
             <Icon name="Binance" className={styles.logo} />
             allisonmadsen@examplle.com

@@ -4,3 +4,21 @@
 .controlsIcon {
   @apply text-n3 w-4 transition-colors cursor-pointer hover:text-n1;
 }
+.button {
+  @apply flex items-center gap-2;
+}
+.text {
+  @apply text-n0 text-sm font-medium;
+}
+.chevron {
+  @apply text-n0 w-4 transition-transform;
+}
+.content {
+  @apply flex flex-col gap-2 items-start;
+}
+.filter {
+  @apply text-n2 text-sm;
+}
+.filter.active {
+  @apply text-n0;
+}

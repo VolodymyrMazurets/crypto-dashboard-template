@@ -10,6 +10,7 @@ interface ITabsProps {
   activeTab: string;
   onClick: (name: string) => void;
   className?: string;
+  isDark?: boolean;
 }
 
 export const Tabs: FC<ITabsProps> = ({
@@ -17,9 +18,10 @@ export const Tabs: FC<ITabsProps> = ({
   activeTab,
   onClick,
   className,
+  isDark,
 }) => {
   return (
-    <div className={cn(styles.tabs, className)}>
+    <div className={cn(styles.tabs, className, isDark ? "bg-n10" : "bg-n9")}>
       {map(data, (name) => {
         return (
           <button

@@ -11,8 +11,11 @@
     outline-ts
     transition-colors;
 }
+.dropdown.light {
+  @apply bg-n7 border-n7;
+}
 .dropdown.active {
-    @apply border-p2;
+  @apply border-p2;
 }
 .content {
   @apply flex flex-col gap-4;

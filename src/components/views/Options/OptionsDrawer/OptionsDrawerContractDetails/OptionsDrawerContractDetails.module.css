@@ -1,0 +1,13 @@
+.contract {
+  @apply divide-y divide-n5 pt-6;
+}
+.item {
+  @apply flex justify-between items-center py-4;
+}
+.name {
+  @apply text-sm;
+  color: #817f9b;
+}
+.value {
+    @apply text-sm;
+}

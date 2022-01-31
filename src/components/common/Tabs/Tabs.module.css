@@ -1,5 +1,5 @@
 .tabs {
-  @apply flex items-center w-full bg-n9 rounded-lg p-1;
+  @apply flex items-center w-full rounded-lg p-1;
 }
 .button {
   @apply flex

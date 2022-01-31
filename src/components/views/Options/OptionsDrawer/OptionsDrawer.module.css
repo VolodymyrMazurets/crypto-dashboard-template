@@ -1,0 +1,64 @@
+.drawer {
+  @apply p-8;
+}
+.head {
+  @apply flex items-center gap-10 mb-8;
+}
+.headValue {
+  @apply font-semibold text-lg;
+}
+.exchange {
+  @apply h-8 flex justify-center items-center px-1 bg-n7 rounded-lg;
+  width: 100px;
+}
+.tabs {
+  @apply mb-8;
+}
+.dropdown {
+  @apply mb-8 flex gap-4 items-center;
+}
+.info {
+  @apply text-n2 w-6;
+}
+.row {
+  @apply flex items-end w-full gap-6 mb-6;
+}
+.input {
+  width: 100%;
+}
+.buttons {
+  @apply flex items-center gap-6 mb-4;
+}
+.buttons > * {
+  @apply flex-1;
+}
+.margin {
+  @apply flex justify-between mb-8;
+}
+.marginWrapper {
+  @apply flex flex-col items-start last:items-end;
+}
+.name {
+  @apply text-xs text-n3;
+}
+.value {
+  @apply text-sm;
+}
+.accordion {
+  z-index: 1;
+}
+.panel {
+  @apply flex;
+}
+.item {
+  @apply flex items-center relative py-5 px-12 bg-n7 rounded-lg;
+}
+.icon {
+  @apply w-6 absolute left-4 transition-transform;
+}
+.item[aria-expanded="true"] .icon {
+  @apply rotate-90;
+}
+.accordionItem {
+    @apply mb-8 last:mb-0;
+}

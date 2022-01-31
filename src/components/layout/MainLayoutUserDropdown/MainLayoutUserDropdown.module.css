@@ -12,3 +12,6 @@
 .chevron {
   @apply text-n0 w-4 transition-transform;
 }
+.content {
+  @apply flex flex-col gap-3 items-start;
+}
