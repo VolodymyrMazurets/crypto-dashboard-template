@@ -11,8 +11,8 @@ import store from "./store";
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-6rz0onkx.us.auth0.com"
-      clientId="eNkP9NuDpHozXiMtY3aV0C0gEUBVbXCU"
+      domain="kemet-dev.us.auth0.com"
+      clientId="KY4EZF5KitjDUmPoaf7gRCvSsOp38Lks"
       redirectUri={window.location.origin}
       cacheLocation="localstorage"
     >
