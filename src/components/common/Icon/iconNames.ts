@@ -9,6 +9,7 @@ export const iconNames = [
     'Bitcoin',
     'BitcoinFilled',
     'BitcoinOutline',
+    'Cards',
     'Checkmark',
     'ChevroneDown',
     'ChevroneLeft',
@@ -37,6 +38,7 @@ export const iconNames = [
     'Search',
     'Settings',
     'Support',
+    'Table',
     'Wallet',
     'WhiteLogo',
   ]; 

@@ -8,6 +8,7 @@ export { ReactComponent as IconAction } from '../../../assets/svg/Action.svg';
   export { ReactComponent as IconBitcoin } from '../../../assets/svg/Bitcoin.svg';
   export { ReactComponent as IconBitcoinFilled } from '../../../assets/svg/BitcoinFilled.svg';
   export { ReactComponent as IconBitcoinOutline } from '../../../assets/svg/BitcoinOutline.svg';
+  export { ReactComponent as IconCards } from '../../../assets/svg/Cards.svg';
   export { ReactComponent as IconCheckmark } from '../../../assets/svg/Checkmark.svg';
   export { ReactComponent as IconChevroneDown } from '../../../assets/svg/ChevroneDown.svg';
   export { ReactComponent as IconChevroneLeft } from '../../../assets/svg/ChevroneLeft.svg';
@@ -36,6 +37,7 @@ export { ReactComponent as IconAction } from '../../../assets/svg/Action.svg';
   export { ReactComponent as IconSearch } from '../../../assets/svg/Search.svg';
   export { ReactComponent as IconSettings } from '../../../assets/svg/Settings.svg';
   export { ReactComponent as IconSupport } from '../../../assets/svg/Support.svg';
+  export { ReactComponent as IconTable } from '../../../assets/svg/Table.svg';
   export { ReactComponent as IconWallet } from '../../../assets/svg/Wallet.svg';
   export { ReactComponent as IconWhiteLogo } from '../../../assets/svg/WhiteLogo.svg';
   

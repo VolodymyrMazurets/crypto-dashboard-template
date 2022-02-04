@@ -1,0 +1,14 @@
+.label {
+  @apply h-8 px-4 bg-n7 rounded-lg flex gap-2 items-center;
+  max-width: 100%;
+}
+.name {
+  @apply text-sm whitespace-nowrap overflow-hidden text-ellipsis;
+  max-width: 156px;
+}
+.email {
+  @apply text-n3 text-sm whitespace-nowrap overflow-hidden text-ellipsis;
+}
+.icon {
+  @apply w-3;
+}

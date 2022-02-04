@@ -1,0 +1,8 @@
+.user {
+  @apply flex flex-wrap gap-4 w-full;
+}
+.wrapper {
+  @apply w-full;
+  flex: 1 1 20%;
+  max-width: calc(25% - 12px);
+}

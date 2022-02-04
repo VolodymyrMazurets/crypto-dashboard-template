@@ -1,0 +1,45 @@
+.card {
+  @apply bg-n11 rounded-2xl p-8;
+}
+.head {
+  @apply flex items-center justify-between gap-4;
+}
+.headWrapper {
+  @apply flex flex-col gap-y-1;
+}
+.title {
+  @apply text-lg font-semibold;
+}
+.code {
+  @apply text-sm text-n2;
+}
+.labels {
+  @apply flex flex-col items-start gap-4 mb-4;
+}
+.headControls {
+  @apply flex items-center gap-3;
+}
+.button {
+  @apply flex items-center gap-2 text-sm text-p2 transition-colors hover:text-p3;
+}
+.plus {
+  @apply w-5;
+}
+.exchange {
+  @apply text-n2;
+}
+.adress {
+  @apply flex flex-col gap-2 mb-6;
+}
+.row {
+  @apply flex justify-between items-center mb-6;
+}
+.col {
+  @apply flex flex-col items-start last:items-end;
+}
+.name {
+    @apply text-xs text-n3;
+}
+.value {
+    @apply text-sm;
+}

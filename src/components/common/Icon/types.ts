@@ -9,6 +9,7 @@ export type IconType =
     | 'Bitcoin'
     | 'BitcoinFilled'
     | 'BitcoinOutline'
+    | 'Cards'
     | 'Checkmark'
     | 'ChevroneDown'
     | 'ChevroneLeft'
@@ -37,6 +38,7 @@ export type IconType =
     | 'Search'
     | 'Settings'
     | 'Support'
+    | 'Table'
     | 'Wallet'
     | 'WhiteLogo';
   

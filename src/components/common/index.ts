@@ -9,3 +9,6 @@ export * from "./LineChartTemplate";
 export * from "./ModalWindow";
 export * from "./GroupFilter";
 export * from "./Input";
+export * from "./LabelElement";
+export * from "./UserLabel";
+export * from "./ExchangeLabel";

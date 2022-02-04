@@ -12,5 +12,5 @@
   height: calc(100vh - 106px);
 }
 .page {
-  @apply pt-6 flex-1;
+  @apply flex-1;
 }

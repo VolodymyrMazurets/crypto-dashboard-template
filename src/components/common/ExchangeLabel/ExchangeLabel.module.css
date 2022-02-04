@@ -1,0 +1,7 @@
+.label {
+    @apply h-8 px-4 bg-n7 rounded-lg flex gap-2 items-center;
+    max-width: 100%;
+}
+.email {
+    @apply text-n3 text-sm whitespace-nowrap overflow-hidden text-ellipsis;
+}

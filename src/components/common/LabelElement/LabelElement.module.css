@@ -1,0 +1,13 @@
+.label {
+  @apply flex items-center justify-center px-6 h-9 rounded-lg text-sm;
+  background: rgba(239, 175, 49, 0.2);
+  color: #f1a81a;
+}
+.label.green {
+  background: rgba(64, 178, 185, 0.2);
+  color: #40b2b9;
+}
+.label.blue {
+  background: rgba(91, 116, 248, 0.2);
+  color: #899cff;
+}

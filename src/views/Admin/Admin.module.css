@@ -1,0 +1,14 @@
+.admin {
+}
+.header {
+  @apply flex items-center gap-6 mb-6;
+}
+.tabs {
+  @apply flex-1;
+}
+.control {
+  @apply cursor-pointer transition-colors text-n2 hover:text-n0;
+}
+.control.active {
+  @apply text-p3;
+}

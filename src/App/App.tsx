@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "src/views";
+import { Admin } from "src/views/Admin";
 import { Analytics } from "src/views/Analytics";
 import { Futures } from "src/views/Futures";
 import { Options } from "src/views/Options";
@@ -16,6 +17,7 @@ export const App: FC = () => {
         <Route path="options" element={<Options />} />
         <Route path="analytics" element={<Analytics />} />
         <Route path="trading-sandbox" element={<TradingSandbox />} />
+        <Route path="admin" element={<Admin />} />
       </Routes>
     </MainLayout>
   );

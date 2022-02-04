@@ -1,0 +1,29 @@
+.user {
+  @apply flex flex-wrap gap-4 w-full;
+}
+.wrapper {
+  @apply w-full;
+  flex: 1 1 20%;
+  max-width: calc(25% - 12px);
+}
+.list {
+  @apply flex flex-col w-full divide-y divide-n9;
+}
+.item {
+  @apply flex items-center w-full py-5;
+}
+.col {
+  @apply flex-1;
+}
+.col:last-child {
+  flex: 0 0;
+}
+.name {
+  @apply text-lg font-semibold;
+}
+.code {
+  @apply text-sm;
+}
+.exchange {
+  @apply h-8 bg-n8 flex items-center justify-center w-28 rounded-lg;
+}

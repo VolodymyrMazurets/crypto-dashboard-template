@@ -6,8 +6,13 @@ import { MainLayoutCoinButton } from "./MainLayoutCoinButton";
 import { MainLayoutLangDropdown } from "./MainLayoutLangDropdown";
 import { MainLayoutSidebar } from "./MainLayoutSidebar";
 import { MainLayoutUserDropdown } from "./MainLayoutUserDropdown";
+import cn from "classnames";
 
-export const MainLayout: FC = ({ children }) => {
+interface IMainLayoutProps {
+  paddingLess?: boolean;
+}
+
+export const MainLayout: FC<IMainLayoutProps> = ({ children, paddingLess }) => {
   return (
     <div className={styles.layout}>
       <header className={styles.header}>
@@ -27,7 +32,9 @@ export const MainLayout: FC = ({ children }) => {
         </div>
       </header>
       <div className={styles.content}>
-        <div className={styles.page}>{children}</div>
+        <div className={cn(styles.page, { [styles.paddingLess]: paddingLess })}>
+          {children}
+        </div>
       </div>
     </div>
   );

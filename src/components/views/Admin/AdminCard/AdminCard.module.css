@@ -1,0 +1,27 @@
+.card {
+    @apply bg-n11 rounded-2xl p-8;
+}
+.head {
+    @apply flex justify-between gap-4 mb-6;
+}
+.headWrapper {
+    @apply flex flex-col gap-y-1;
+}
+.title {
+    @apply text-lg font-semibold;
+}
+.email {
+    @apply text-sm text-n2;
+}
+.labels {
+    @apply flex flex-col items-start gap-4 mb-4;
+}
+.headControls {
+    @apply flex items-center gap-3;
+}
+.button {
+    @apply flex items-center gap-2 text-sm text-p2 transition-colors hover:text-p3;
+}
+.plus {
+    @apply w-5;
+}
