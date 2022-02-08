@@ -1,6 +1,7 @@
 import { map, range } from "lodash";
 import React, { FC } from "react";
 import { Icon } from "src/components/common";
+import { AdminActionDropdown } from "../AdminActionDropdown";
 import { AdminApiCard } from "../AdminApiCard";
 import styles from "./AdminApi.module.css";
 
@@ -29,7 +30,7 @@ export const AdminApi: FC<IAdminApiProps> = ({ isListMode }) => {
                 </span>
               </div>
               <div className={styles.col}>
-                <Icon name="Action" />
+                <AdminActionDropdown />
               </div>
             </div>
           ))}

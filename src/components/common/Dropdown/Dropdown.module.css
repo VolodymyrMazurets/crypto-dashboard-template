@@ -1,0 +1,3 @@
+.dropdown > div > div:first-child {
+  display: none !important;
+}

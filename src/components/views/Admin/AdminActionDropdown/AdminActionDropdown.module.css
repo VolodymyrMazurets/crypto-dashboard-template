@@ -1,0 +1,9 @@
+.dropdown {
+  @apply flex flex-col items-start gap-2;
+}
+.dropdownButton {
+  @apply text-sm transition-colors hover:text-n1;
+}
+.dropdownButton.remove {
+  @apply text-r1 hover:text-r2;
+}

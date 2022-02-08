@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import styles from "./AdminExchangeCard.module.css";
 import cn from "classnames";
 import { Icon, LabelElement, UserLabel } from "src/components/common";
+import { AdminActionDropdown } from "../AdminActionDropdown";
+import { AdminUsersExchangeDropdown } from "../AdminUsersExchangeDropdown";
 
 interface IAdminExchangeCardProps {
   className?: string;
@@ -16,12 +18,14 @@ export const AdminExchangeCard: FC<IAdminExchangeCardProps> = ({
         <Icon name="Binance" className={styles.exchange} />
         <div className={styles.headControls}>
           <LabelElement type="green">Read-Write</LabelElement>
-          <Icon name="Action" className={styles.action} />
+          <AdminActionDropdown isExchangeTab />
         </div>
       </div>
       <div className={styles.adress}>
         <span className={styles.title}>Randy Saris</span>
-        <span className={styles.code}>zaCELgL.0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx</span>
+        <span className={styles.code}>
+          zaCELgL.0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx
+        </span>
       </div>
       <div className={styles.row}>
         <div className={styles.col}>
@@ -48,9 +52,7 @@ export const AdminExchangeCard: FC<IAdminExchangeCardProps> = ({
             email="annpassaquindicia@gmail.com"
           />
         </div>
-        <button type="button" className={styles.button}>
-          <Icon name="Plus" className={styles.plus} />2 accounts
-        </button>
+        <AdminUsersExchangeDropdown />
       </div>
     </div>
   );

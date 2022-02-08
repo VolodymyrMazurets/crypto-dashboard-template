@@ -12,3 +12,9 @@
 .control.active {
   @apply text-p3;
 }
+.buttonWrapper > * {
+  width: 190px;
+}
+.buttonWrapper > * {
+  width: 190px;
+}

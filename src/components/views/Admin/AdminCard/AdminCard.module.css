@@ -19,9 +19,3 @@
 .headControls {
     @apply flex items-center gap-3;
 }
-.button {
-    @apply flex items-center gap-2 text-sm text-p2 transition-colors hover:text-p3;
-}
-.plus {
-    @apply w-5;
-}

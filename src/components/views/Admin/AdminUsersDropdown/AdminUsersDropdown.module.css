@@ -1,0 +1,15 @@
+.dropdown {
+  @apply flex flex-col items-start gap-2;
+}
+.button {
+  @apply flex items-center gap-2 text-sm text-p2 transition-colors hover:text-p3;
+}
+.plus {
+  @apply w-5;
+}
+.item {
+  @apply flex items-center gap-3;
+}
+.email {
+  @apply text-n3 text-sm;
+}

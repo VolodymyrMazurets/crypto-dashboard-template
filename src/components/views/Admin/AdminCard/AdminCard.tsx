@@ -1,13 +1,19 @@
 import React, { FC } from "react";
 import styles from "./AdminCard.module.css";
 import cn from "classnames";
-import { ExchangeLabel, Icon, LabelElement } from "src/components/common";
+import {
+  ExchangeLabel,
+  LabelElement,
+} from "src/components/common";
+import { AdminActionDropdown } from "../AdminActionDropdown";
+import { AdminUsersDropdown } from "../AdminUsersDropdown";
 
 interface IAdminCardProps {
   className?: string;
 }
 
 export const AdminCard: FC<IAdminCardProps> = ({ className }) => {
+
   return (
     <div className={cn(styles.card, className)}>
       <div className={styles.head}>
@@ -17,24 +23,19 @@ export const AdminCard: FC<IAdminCardProps> = ({ className }) => {
         </div>
         <div className={styles.headControls}>
           <LabelElement>Admin</LabelElement>
-          <Icon name="Action" className={styles.action} />
+          <AdminActionDropdown />
         </div>
       </div>
       <div className={styles.body}>
         <div className={styles.labels}>
-          <ExchangeLabel
-            exhcange="binance"
-            email="hey@gmail.com"
-          />
+          <ExchangeLabel exhcange="binance" email="hey@gmail.com" />
           <ExchangeLabel
             exhcange="deribit"
             email="annpassaquindicia@gmail.com"
           />
           <ExchangeLabel exhcange="ftx" email="annpassaquindicia@gmail.com" />
         </div>
-        <button type="button" className={styles.button}>
-          <Icon name="Plus" className={styles.plus} />2 accounts
-        </button>
+        <AdminUsersDropdown />
       </div>
     </div>
   );

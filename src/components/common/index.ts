@@ -12,3 +12,4 @@ export * from "./Input";
 export * from "./LabelElement";
 export * from "./UserLabel";
 export * from "./ExchangeLabel";
+export * from "./Dropdown";

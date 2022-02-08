@@ -18,13 +18,24 @@ export const Admin: FC = () => {
   const renderContent = useMemo(() => {
     switch (activeTab) {
       case "Exchange Accounts":
-        return <AdminExchange />;
+        return <AdminExchange isListMode={isListView} />;
       case "API Access":
         return <AdminApi isListMode={isListView} />;
       default:
-        return <AdminUserManagement />;
+        return <AdminUserManagement isListMode={isListView} />;
     }
   }, [activeTab, isListView]);
+
+  const renderButton = useMemo(() => {
+    switch (activeTab) {
+      case "Exchange Accounts":
+        return <Button>Add Account</Button>;
+      case "API Access":
+        return <Button>Generate API Key</Button>;
+      default:
+        return <Button>Add New User</Button>;
+    }
+  }, [activeTab]);
 
   return (
     <div className={styles.admin}>
@@ -46,7 +57,7 @@ export const Admin: FC = () => {
           className={cn(styles.control, { [styles.active]: isListView })}
           onClick={() => setIsListView(true)}
         />
-        <Button>Add New User</Button>
+        <div className={styles.buttonWrapper}>{renderButton}</div>
       </div>
       <div className={styles.content}>{renderContent}</div>
     </div>

@@ -6,3 +6,34 @@
   flex: 1 1 20%;
   max-width: calc(25% - 12px);
 }
+.list {
+  @apply flex flex-col w-full divide-y divide-n9;
+}
+.item {
+  @apply flex items-center w-full py-5 gap-6;
+}
+.col {
+  @apply flex-1;
+}
+.col.exchange {
+  @apply flex gap-3;
+}
+.col:first-child {
+  flex: 0 0 20%;
+}
+.col:nth-child(2) {
+  flex: 0 0 120px;
+  margin-right: 60px;
+}
+.col:last-child {
+  flex: 0 0;
+}
+.name {
+  @apply text-lg font-semibold whitespace-nowrap;
+}
+.mail {
+  @apply text-sm text-n2;
+}
+.wrapperCol {
+  @apply flex flex-col;
+}

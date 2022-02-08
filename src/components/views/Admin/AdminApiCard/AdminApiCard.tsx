@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styles from "./AdminApiCard.module.css";
 import cn from "classnames";
 import { Icon } from "src/components/common";
+import { AdminActionDropdown } from "../AdminActionDropdown";
 
 interface IAdminApiCardProps {
   className?: string;
@@ -13,7 +14,7 @@ export const AdminApiCard: FC<IAdminApiCardProps> = ({ className }) => {
       <div className={styles.head}>
         <Icon name="Binance" className={styles.exchange} />
         <div className={styles.headControls}>
-          <Icon name="Action" className={styles.action} />
+          <AdminActionDropdown />
         </div>
       </div>
       <div className={styles.adress}>
