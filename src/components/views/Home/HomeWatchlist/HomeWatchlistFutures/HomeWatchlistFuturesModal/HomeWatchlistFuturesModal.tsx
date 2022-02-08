@@ -8,11 +8,13 @@ import { Button, Icon } from "src/components/common";
 interface IHomeWatchlistFuturesModalProps {
   onCancel?: () => void;
   onItemClick?: () => void;
+  footer?: boolean;
 }
 
 export const HomeWatchlistFuturesModal: FC<IHomeWatchlistFuturesModalProps> = ({
   onCancel,
   onItemClick,
+  footer = true,
 }) => {
   const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
   const columns = useMemo(
@@ -177,14 +179,16 @@ export const HomeWatchlistFuturesModal: FC<IHomeWatchlistFuturesModalProps> = ({
           </tbody>
         </table>
       </div>
-      <div className={styles.footer}>
-        <Button type="secondary" onClick={onCancel}>
-          Cancel
-        </Button>
-        <Button disabled={size(selectedRows) === 0}>
-          Add to the Watchlist
-        </Button>
-      </div>
+      {footer && (
+        <div className={styles.footer}>
+          <Button type="secondary" onClick={onCancel}>
+            Cancel
+          </Button>
+          <Button disabled={size(selectedRows) === 0}>
+            Add to the Watchlist
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

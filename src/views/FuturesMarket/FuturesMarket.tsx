@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import {
+  FuturesMarketChart,
   FuturesMarketIndex,
   FuturesMarketOrderBook,
   FuturesMarketTable,
@@ -59,7 +60,7 @@ export const FuturesMarket: FC = () => {
             title="BTC-03DEC21-44000-C"
             renderHeaderControls={<WidgetControls buttonIcon="Scales" />}
           >
-            chart
+            <FuturesMarketChart />
           </WidgetBlock>
         </div>
         <div className={styles.thirdPart}>

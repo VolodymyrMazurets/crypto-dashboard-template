@@ -45,7 +45,7 @@ export const FuturesTable: FC = () => {
           onItemClick={(value) => setActiveValues(xor(activeValues, [value]))}
         />
       </div>
-      <HomeWatchlistFuturesModal onItemClick={() => nav('/futures/2')} />
+      <HomeWatchlistFuturesModal onItemClick={() => nav('/futures/2')} footer={false} />
     </div>
   );
 };
