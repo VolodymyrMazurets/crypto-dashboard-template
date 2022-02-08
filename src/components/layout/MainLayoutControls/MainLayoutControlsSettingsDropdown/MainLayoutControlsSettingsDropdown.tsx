@@ -47,6 +47,7 @@ export const MainLayoutControlsSettingsDropdown: FC = () => {
         overlay={dropdownContent}
         trigger={["click"]}
         overlayInnerStyle={{ width: 262 }}
+        overlayStyle={{ opacity: 1 }}
       >
         <Button type="icon" icon="Settings" />
       </Tooltip>

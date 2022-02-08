@@ -7,10 +7,12 @@ import { Button, Icon } from "src/components/common";
 
 interface IHomeWatchlistFuturesModalProps {
   onCancel?: () => void;
+  onItemClick?: () => void;
 }
 
 export const HomeWatchlistFuturesModal: FC<IHomeWatchlistFuturesModalProps> = ({
   onCancel,
+  onItemClick,
 }) => {
   const [selectedRows, setSelectedRows] = useState<Array<string | number>>([]);
   const columns = useMemo(
@@ -146,7 +148,11 @@ export const HomeWatchlistFuturesModal: FC<IHomeWatchlistFuturesModalProps> = ({
                   className={cn(styles.tableBodyRow, {
                     [styles.active]: includes(selectedRows, row.id),
                   })}
-                  onClick={() => setSelectedRows(xor(selectedRows, [row.id]))}
+                  onClick={() =>
+                    onItemClick
+                      ? onItemClick()
+                      : setSelectedRows(xor(selectedRows, [row.id]))
+                  }
                 >
                   {row.cells.map((cell) => {
                     return (

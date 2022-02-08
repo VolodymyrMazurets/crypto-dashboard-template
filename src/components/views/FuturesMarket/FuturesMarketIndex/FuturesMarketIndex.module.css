@@ -1,0 +1,17 @@
+.contract {
+    @apply divide-y divide-n5 pt-6;
+  }
+  .item {
+    @apply flex justify-between items-center py-4;
+  }
+  .name {
+    @apply text-sm;
+    color: #817f9b;
+  }
+  .name.primary {
+      @apply text-p2;
+  }
+  .value {
+      @apply text-sm;
+  }
+  

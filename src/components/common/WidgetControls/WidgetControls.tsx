@@ -15,6 +15,7 @@ interface IWidgetControlsProps {
   withFilters?: boolean;
   onFilterClick?: (value: PeriodType) => void;
   activeFilter?: PeriodType;
+  isShortMode?: boolean;
 }
 
 const filtersData: PeriodType[] = ["1 day", "1 week", "30 days", "3 month"];
@@ -27,6 +28,7 @@ export const WidgetControls: FC<IWidgetControlsProps> = ({
   withFilters,
   onFilterClick,
   activeFilter,
+  isShortMode,
 }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
@@ -72,7 +74,9 @@ export const WidgetControls: FC<IWidgetControlsProps> = ({
           </Tooltip>
         </>
       )}
-      <Button type="icon" icon={buttonIcon} onClick={onButtonClick} />
+      {!isShortMode && (
+        <Button type="icon" icon={buttonIcon} onClick={onButtonClick} />
+      )}
       <Icon
         name="Resize"
         className={styles.controlsIcon}

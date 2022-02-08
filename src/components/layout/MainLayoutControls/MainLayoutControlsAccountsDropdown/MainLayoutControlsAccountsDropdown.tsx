@@ -50,6 +50,7 @@ export const MainLayoutControlsAccountsDropdown: FC<
         trigger={["click"]}
         afterVisibleChange={(v) => setIsDropdownVisible(v)}
         overlayInnerStyle={{ width: 345 }}
+        overlayStyle={{ opacity: 1 }}
       >
         <button
           className={cn(styles.dropdown, className, {

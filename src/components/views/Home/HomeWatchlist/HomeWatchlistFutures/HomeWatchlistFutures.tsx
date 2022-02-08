@@ -1,13 +1,19 @@
 import { map, range } from "lodash";
 import React, { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import { Icon } from "src/components/common";
 import styles from "./HomeWatchlistFutures.module.css";
 
 export const HomeWatchlistFutures: FC = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.futures}>
       {map(range(4), (item) => (
-        <div key={item} className={styles.item}>
+        <div
+          key={item}
+          className={styles.item}
+          onClick={() => navigate("futures/2")}
+        >
           <div className={styles.itemHead}>
             <div className={styles.headCoin}>
               <Icon name="BitcoinOutline" className={styles.coin} />

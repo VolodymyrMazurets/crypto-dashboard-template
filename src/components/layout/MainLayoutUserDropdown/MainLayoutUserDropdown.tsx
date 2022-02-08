@@ -30,6 +30,7 @@ export const MainLayoutUserDropdown: FC = () => {
         overlay={dropdownContent}
         trigger={["click"]}
         afterVisibleChange={(v) => setIsDropdownVisible(v)}
+        overlayStyle={{ opacity: 1 }}
       >
         <button
           className={cn(styles.dropdown, {
