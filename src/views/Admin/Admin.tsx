@@ -1,9 +1,21 @@
 import React, { FC, useMemo, useState } from "react";
-import { Button, Icon, ITabsData, Tabs } from "src/components/common";
+import {
+  Button,
+  Icon,
+  ITabsData,
+  ModalWindow,
+  Tabs,
+} from "src/components/common";
 import cn from "classnames";
 import styles from "./Admin.module.css";
-import { AdminExchange, AdminUserManagement } from "src/components/views/Admin";
+import {
+  AdminAccountModal,
+  AdminExchange,
+  AdminUserManagement,
+  AdminUserManagementModal,
+} from "src/components/views/Admin";
 import { AdminApi } from "src/components/views/Admin/AdminApi";
+import { AdminApiModal } from "src/components/views/Admin/AdminApiModal";
 
 const tabsData: ITabsData = [
   "User Management",
@@ -14,6 +26,9 @@ const tabsData: ITabsData = [
 export const Admin: FC = () => {
   const [activeTab, setActiveTab] = useState<string>("User Management");
   const [isListView, setIsListView] = useState(false);
+  const [isUserModalVisible, setIsUserModalVisible] = useState(false);
+  const [isAccountModalVisible, setIsAccountModalVisible] = useState(false);
+  const [isApiModalVisible, setIsApiModalVisible] = useState(false);
 
   const renderContent = useMemo(() => {
     switch (activeTab) {
@@ -22,23 +37,82 @@ export const Admin: FC = () => {
       case "API Access":
         return <AdminApi isListMode={isListView} />;
       default:
-        return <AdminUserManagement isListMode={isListView} />;
+        return (
+          <AdminUserManagement
+            isListMode={isListView}
+            onManageClick={() => setIsUserModalVisible(true)}
+          />
+        );
     }
   }, [activeTab, isListView]);
 
   const renderButton = useMemo(() => {
     switch (activeTab) {
       case "Exchange Accounts":
-        return <Button>Add Account</Button>;
+        return (
+          <Button onClick={() => setIsAccountModalVisible(true)}>
+            Add Account
+          </Button>
+        );
       case "API Access":
-        return <Button>Generate API Key</Button>;
+        return (
+          <Button onClick={() => setIsApiModalVisible(true)}>
+            Generate API Key
+          </Button>
+        );
       default:
-        return <Button>Add New User</Button>;
+        return (
+          <Button onClick={() => setIsUserModalVisible(true)}>
+            Add New User
+          </Button>
+        );
     }
   }, [activeTab]);
 
   return (
     <div className={styles.admin}>
+      <ModalWindow
+        isOpen={isUserModalVisible}
+        onClose={() => setIsUserModalVisible(false)}
+        title="Add Account"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 820,
+          maxHeight: "80vh",
+        }}
+      >
+        <AdminUserManagementModal />
+      </ModalWindow>
+      <ModalWindow
+        isOpen={isAccountModalVisible}
+        onClose={() => setIsAccountModalVisible(false)}
+        title="User Management"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 650,
+          maxHeight: "80vh",
+        }}
+      >
+        <AdminAccountModal />
+      </ModalWindow>
+      <ModalWindow
+        isOpen={isApiModalVisible}
+        onClose={() => setIsApiModalVisible(false)}
+        title="Generate New API Key"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 650,
+          maxHeight: "80vh",
+        }}
+      >
+        <AdminApiModal />
+      </ModalWindow>
       <div className={styles.header}>
         <div className={styles.tabs}>
           <Tabs

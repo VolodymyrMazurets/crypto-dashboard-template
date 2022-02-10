@@ -1,0 +1,9 @@
+.modal {
+  @apply p-8 overflow-auto flex flex-col w-full gap-6;
+}
+.footer {
+  @apply flex gap-4 items-center w-full;
+}
+.footer > * {
+  @apply w-full;
+}

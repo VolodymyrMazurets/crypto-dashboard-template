@@ -1,19 +1,19 @@
 import React, { FC } from "react";
 import styles from "./AdminCard.module.css";
 import cn from "classnames";
-import {
-  ExchangeLabel,
-  LabelElement,
-} from "src/components/common";
+import { ExchangeLabel, LabelElement } from "src/components/common";
 import { AdminActionDropdown } from "../AdminActionDropdown";
 import { AdminUsersDropdown } from "../AdminUsersDropdown";
 
 interface IAdminCardProps {
   className?: string;
+  onManageClick?: () => void;
 }
 
-export const AdminCard: FC<IAdminCardProps> = ({ className }) => {
-
+export const AdminCard: FC<IAdminCardProps> = ({
+  className,
+  onManageClick,
+}) => {
   return (
     <div className={cn(styles.card, className)}>
       <div className={styles.head}>
@@ -23,7 +23,7 @@ export const AdminCard: FC<IAdminCardProps> = ({ className }) => {
         </div>
         <div className={styles.headControls}>
           <LabelElement>Admin</LabelElement>
-          <AdminActionDropdown />
+          <AdminActionDropdown onManageClick={onManageClick} />
         </div>
       </div>
       <div className={styles.body}>

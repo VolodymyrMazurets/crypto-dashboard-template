@@ -14,6 +14,7 @@ export { ReactComponent as IconAction } from '../../../assets/svg/Action.svg';
   export { ReactComponent as IconChevroneLeft } from '../../../assets/svg/ChevroneLeft.svg';
   export { ReactComponent as IconChevroneRight } from '../../../assets/svg/ChevroneRight.svg';
   export { ReactComponent as IconChevroneUp } from '../../../assets/svg/ChevroneUp.svg';
+  export { ReactComponent as IconCopy } from '../../../assets/svg/Copy.svg';
   export { ReactComponent as IconCross } from '../../../assets/svg/Cross.svg';
   export { ReactComponent as IconDashboard } from '../../../assets/svg/Dashboard.svg';
   export { ReactComponent as IconDeribit } from '../../../assets/svg/Deribit.svg';

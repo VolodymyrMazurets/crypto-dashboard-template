@@ -13,3 +13,4 @@ export * from "./LabelElement";
 export * from "./UserLabel";
 export * from "./ExchangeLabel";
 export * from "./Dropdown";
+export * from "./Notification";

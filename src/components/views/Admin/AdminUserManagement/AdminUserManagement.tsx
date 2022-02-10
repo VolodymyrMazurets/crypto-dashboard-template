@@ -9,10 +9,12 @@ import styles from "./AdminUserManagement.module.css";
 
 interface IAdminUserManagementProps {
   isListMode?: boolean;
+  onManageClick?: () => void;
 }
 
 export const AdminUserManagement: FC<IAdminUserManagementProps> = ({
   isListMode,
+  onManageClick,
 }) => {
   return (
     <>
@@ -47,7 +49,10 @@ export const AdminUserManagement: FC<IAdminUserManagementProps> = ({
         <div className={styles.user}>
           {map(range(12), (item) => (
             <div className={styles.wrapper} key={item}>
-              <AdminCard className={styles.card} />
+              <AdminCard
+                className={styles.card}
+                onManageClick={onManageClick}
+              />
             </div>
           ))}
         </div>

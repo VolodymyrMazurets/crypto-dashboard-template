@@ -14,6 +14,8 @@
     pl-3
     pr-14
     w-full
+    placeholder:text-n2
+    placeholder:text-sm
     border-n11
     hover:bg-n10
     hover:border-n10
@@ -23,4 +25,7 @@
 
 .input.light {
   @apply bg-n8 border-n8;
+}
+.sublabel {
+  @apply text-sm text-n3 italic inline-block ml-2;
 }

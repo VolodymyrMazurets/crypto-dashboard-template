@@ -5,10 +5,12 @@ import styles from "./AdminActionDropdown.module.css";
 
 interface IAdminActionDropdownProps {
   isExchangeTab?: boolean;
+  onManageClick?: () => void;
 }
 
 export const AdminActionDropdown: FC<IAdminActionDropdownProps> = ({
   isExchangeTab,
+  onManageClick,
 }) => {
   const renderDropdownContent = useMemo(() => {
     return (
@@ -26,7 +28,11 @@ export const AdminActionDropdown: FC<IAdminActionDropdownProps> = ({
             </button>
           </>
         ) : (
-          <button type="button" className={styles.dropdownButton}>
+          <button
+            type="button"
+            className={styles.dropdownButton}
+            onClick={onManageClick}
+          >
             Manage
           </button>
         )}
@@ -38,7 +44,7 @@ export const AdminActionDropdown: FC<IAdminActionDropdownProps> = ({
         </button>
       </div>
     );
-  }, [isExchangeTab]);
+  }, [isExchangeTab, onManageClick]);
   return (
     <Dropdown dropdownContent={renderDropdownContent}>
       <Icon name="Action" className={styles.action} />

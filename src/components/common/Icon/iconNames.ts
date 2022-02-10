@@ -15,6 +15,7 @@ export const iconNames = [
     'ChevroneLeft',
     'ChevroneRight',
     'ChevroneUp',
+    'Copy',
     'Cross',
     'Dashboard',
     'Deribit',

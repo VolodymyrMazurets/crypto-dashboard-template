@@ -15,6 +15,7 @@ export type IconType =
     | 'ChevroneLeft'
     | 'ChevroneRight'
     | 'ChevroneUp'
+    | 'Copy'
     | 'Cross'
     | 'Dashboard'
     | 'Deribit'
