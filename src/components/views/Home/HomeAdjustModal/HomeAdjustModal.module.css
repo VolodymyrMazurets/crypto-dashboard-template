@@ -1,0 +1,68 @@
+.modal {
+  @apply px-8 pb-8;
+}
+.wrapper {
+  @apply bg-n8 p-6 rounded-lg;
+}
+.panel {
+  @apply flex;
+}
+.accordion {
+  @apply bg-ts;
+}
+.accordionItem {
+  @apply border-ts;
+}
+.accordionHead {
+  @apply flex items-center relative pl-7 bg-ts;
+}
+.icon {
+  @apply w-5 absolute transition-transform text-n2;
+  left: -6px;
+}
+.item[aria-expanded="true"] .icon {
+  @apply rotate-90;
+}
+.tabName {
+  @apply text-n2 font-medium text-sm;
+}
+.header {
+  @apply mb-6 flex items-center gap-2;
+}
+.title {
+  @apply text-sm font-medium;
+}
+.table {
+  @apply pt-5 flex flex-wrap gap-y-4;
+}
+.item {
+  @apply flex flex-col items-start;
+  flex: 1 1 calc(100% / 3);
+}
+.item:nth-child(3n + 3) {
+  flex: 1 1 10%;
+}
+.name {
+  @apply text-sm text-n3;
+}
+.value {
+  @apply text-sm;
+}
+.controls {
+  @apply flex items-center justify-between h-14 px-4 bg-n8 rounded-lg my-6;
+}
+.controlBtn {
+  @apply transition-colors cursor-pointer hover:text-n2;
+}
+.controlValue {
+    @apply text-2xl font-medium;
+}
+.footer {
+    @apply flex items-center gap-6;
+}
+.footer > * {
+    flex: 1;
+}
+.slider {
+    @apply mb-8;
+}

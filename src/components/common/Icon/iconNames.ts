@@ -38,6 +38,7 @@ export const iconNames = [
     'Scales',
     'Search',
     'Settings',
+    'Sticks',
     'Support',
     'Table',
     'Wallet',

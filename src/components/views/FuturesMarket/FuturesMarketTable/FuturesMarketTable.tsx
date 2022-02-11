@@ -1,10 +1,12 @@
 import { map, range } from "lodash";
-import React, { FC, useMemo } from "react";
+import React, { FC, useMemo, useState } from "react";
 import { useTable } from "react-table";
 import cn from "classnames";
 import styles from "./FuturesMarketTable.module.css";
+import { Tabs } from "src/components/common";
 
 export const FuturesMarketTable: FC = () => {
+  const [activeTab, setActiveTab] = useState("Positions");
   const columns = useMemo(
     () => [
       {
@@ -114,55 +116,80 @@ export const FuturesMarketTable: FC = () => {
       data,
     });
 
+  const renderTable = useMemo(() => {
+    return (
+      <table {...getTableProps()} className={styles.table}>
+        <thead className={styles.tableHead}>
+          {headerGroups.map((headerGroup) => (
+            <tr
+              {...headerGroup.getHeaderGroupProps()}
+              className={styles.tableHeadRow}
+            >
+              {headerGroup.headers.map((column) => (
+                <th
+                  {...column.getHeaderProps()}
+                  className={styles.tableHeadRowCol}
+                >
+                  {column.render("Header")}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody {...getTableBodyProps()} className={styles.tableBody}>
+          {rows.map((row) => {
+            prepareRow(row);
+            return (
+              <tr {...row.getRowProps()} className={styles.tableBodyRow}>
+                {row.cells.map((cell) => {
+                  return (
+                    <td
+                      {...cell.getCellProps([
+                        {
+                          className: cn(
+                            styles.tableBodyRowCol,
+                            // @ts-ignore
+                            cell.column.className
+                          ),
+                        },
+                      ])}
+                    >
+                      {cell.render("Cell")}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    );
+  }, [getTableBodyProps, getTableProps, headerGroups, prepareRow, rows]);
+
+  const renderTab = useMemo(() => {
+    switch (activeTab) {
+      case "Positions":
+        return renderTable;
+      case "Open Orders":
+        return renderTable;
+      case "Order History":
+        return renderTable;
+
+      default:
+        return renderTable;
+    }
+  }, [activeTab, renderTable]);
+
   return (
     <div className={styles.order}>
-      <div className={styles.summary}>
-        <table {...getTableProps()} className={styles.table}>
-          <thead className={styles.tableHead}>
-            {headerGroups.map((headerGroup) => (
-              <tr
-                {...headerGroup.getHeaderGroupProps()}
-                className={styles.tableHeadRow}
-              >
-                {headerGroup.headers.map((column) => (
-                  <th
-                    {...column.getHeaderProps()}
-                    className={styles.tableHeadRowCol}
-                  >
-                    {column.render("Header")}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody {...getTableBodyProps()} className={styles.tableBody}>
-            {rows.map((row) => {
-              prepareRow(row);
-              return (
-                <tr {...row.getRowProps()} className={styles.tableBodyRow}>
-                  {row.cells.map((cell) => {
-                    return (
-                      <td
-                        {...cell.getCellProps([
-                          {
-                            className: cn(
-                              styles.tableBodyRowCol,
-                              // @ts-ignore
-                              cell.column.className
-                            ),
-                          },
-                        ])}
-                      >
-                        {cell.render("Cell")}
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+      <Tabs
+        data={["Positions", "Open Orders", "Order History", "Trade History"]}
+        activeTab={activeTab}
+        onClick={setActiveTab}
+        isDark
+        className={styles.tabs}
+      />
+      <div className={styles.summary}>{renderTab}</div>
     </div>
   );
 };

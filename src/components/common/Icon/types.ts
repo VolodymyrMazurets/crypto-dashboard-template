@@ -38,6 +38,7 @@ export type IconType =
     | 'Scales'
     | 'Search'
     | 'Settings'
+    | 'Sticks'
     | 'Support'
     | 'Table'
     | 'Wallet'

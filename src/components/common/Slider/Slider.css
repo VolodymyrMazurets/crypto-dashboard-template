@@ -1,0 +1,29 @@
+.Slider {
+  @apply h-8 flex items-center pb-4;
+}
+.Slider__mark {
+  @apply w-3 h-3 rounded-full bg-p8;
+}
+.Slider__mark._active {
+  @apply bg-p5;
+}
+.Slider__thumb {
+  @apply w-5 h-5 rounded-full border border-p5 bg-n9 cursor-pointer hover:border-p4;
+  border-width: 5px;
+}
+.Slider__track {
+  height: 3px;
+  @apply relative;
+}
+.Slider__track.Slider__track-0 {
+  @apply bg-p5;
+}
+.Slider__track.Slider__track-1 {
+  @apply bg-p8;
+}
+.Slider__label {
+  @apply absolute text-n3 text-sm;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+}

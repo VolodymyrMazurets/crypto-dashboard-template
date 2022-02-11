@@ -1,0 +1,30 @@
+.checkbox {
+  @apply relative cursor-pointer flex items-center h-5 w-5;
+  z-index: 1;
+}
+.checkbox:hover .area {
+  @apply bg-n10 border-n10;
+}
+.checkbox.disabled {
+  @apply cursor-not-allowed;
+}
+.input {
+  @apply h-5 w-5 absolute hidden opacity-0 left-px top-px;
+  z-index: -2;
+}
+.input:checked + .area .check {
+  @apply inline-block;
+}
+.input:checked + .area {
+  @apply bg-p5 border-p5;
+}
+.input:focus + .area {
+  @apply border-p1;
+}
+.area {
+  @apply w-5 h-5 justify-center items-center bg-n11 border-n11 rounded transition-colors inline-flex;
+}
+.check {
+  display: none;
+  @apply w-4 text-n0;
+}

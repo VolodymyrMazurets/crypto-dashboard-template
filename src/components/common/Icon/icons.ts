@@ -37,6 +37,7 @@ export { ReactComponent as IconAction } from '../../../assets/svg/Action.svg';
   export { ReactComponent as IconScales } from '../../../assets/svg/Scales.svg';
   export { ReactComponent as IconSearch } from '../../../assets/svg/Search.svg';
   export { ReactComponent as IconSettings } from '../../../assets/svg/Settings.svg';
+  export { ReactComponent as IconSticks } from '../../../assets/svg/Sticks.svg';
   export { ReactComponent as IconSupport } from '../../../assets/svg/Support.svg';
   export { ReactComponent as IconTable } from '../../../assets/svg/Table.svg';
   export { ReactComponent as IconWallet } from '../../../assets/svg/Wallet.svg';

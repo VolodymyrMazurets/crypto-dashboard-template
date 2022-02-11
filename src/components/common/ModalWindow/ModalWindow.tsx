@@ -2,6 +2,7 @@ import React, { CSSProperties, FC, ReactNode } from "react";
 import styles from "./ModalWindow.module.css";
 import ReactModal from "react-modal";
 import { Icon } from "..";
+import classNames from "classnames";
 
 export interface IModalWindowProps {
   isOpen: boolean;
@@ -10,6 +11,7 @@ export interface IModalWindowProps {
   renderHeadContent?: ReactNode;
   renderFooterContent?: ReactNode;
   style?: CSSProperties;
+  headerPaddingLess?: boolean;
 }
 
 export const ModalWindow: FC<IModalWindowProps> = ({
@@ -20,6 +22,7 @@ export const ModalWindow: FC<IModalWindowProps> = ({
   renderHeadContent,
   renderFooterContent,
   style = { top: 121, left: 24, right: 24, bottom: 121 },
+  headerPaddingLess,
 }) => {
   return (
     <ReactModal
@@ -31,7 +34,11 @@ export const ModalWindow: FC<IModalWindowProps> = ({
       className={styles.content}
       style={{ content: style }}
     >
-      <div className={styles.head}>
+      <div
+        className={classNames(styles.head, {
+          [styles.paddingLess]: headerPaddingLess,
+        })}
+      >
         <h4 className={styles.title}>{title}</h4>
         <div className={styles.headCustom}>{renderHeadContent}</div>
         <Icon className={styles.close} name="Cross" onClick={onClose} />

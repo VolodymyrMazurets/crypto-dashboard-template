@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import { Icon } from "src/components/common";
+import { Dropdown, Icon } from "src/components/common";
 import cn from "classnames";
 import styles from "./HomePositionsItem.module.css";
-import Tooltip from "rc-tooltip";
-import "rc-tooltip/assets/bootstrap.css";
-import "./HomePositionsItem.css";
+import { useAppDispatch } from "src/store";
+import { toggleAdjustModal } from "src/store/slices/ui";
+import { random } from "lodash";
 
 interface IHomePositionsItemProps {
   className?: string;
@@ -13,9 +13,16 @@ interface IHomePositionsItemProps {
 export const HomePositionsItem: FC<IHomePositionsItemProps> = ({
   className,
 }) => {
+  const dispatch = useAppDispatch();
+
   const dropdownContent = (
     <div className={styles.dropdown}>
-      <button className={styles.linkBtn}>Adjust Leverage</button>
+      <button
+        className={styles.linkBtn}
+        onClick={() => dispatch(toggleAdjustModal())}
+      >
+        Adjust Leverage
+      </button>
       <button className={styles.linkBtn}>TP/SL</button>
       <button className={styles.linkBtn}>Close Position</button>
     </div>
@@ -24,20 +31,16 @@ export const HomePositionsItem: FC<IHomePositionsItemProps> = ({
   return (
     <div className={cn(styles.item, className)}>
       <div className={styles.head}>
-        <h6 className={styles.title}>LTCUSDT</h6>
+        <h6 className={styles.title}>{`BTC-10DEC2021-${random(5000, 5700)}C.0`}</h6>
         <div className={styles.headWrapper}>
           <Icon name="ExternalLink" className={styles.linkIcon} />
-          <Tooltip
-            overlayClassName="HomePositionItemDropdown"
+          <Dropdown
+            dropdownContent={dropdownContent}
             placement="bottomRight"
-            overlay={dropdownContent}
-            trigger={["click"]}
-            overlayStyle={{opacity: 1}}
+            width={204}
           >
-            <button>
-              <Icon name="Action" className={styles.actionIcon} />
-            </button>
-          </Tooltip>
+            <Icon name="Action" className={styles.actionIcon} />
+          </Dropdown>
         </div>
       </div>
       <div className={styles.columns}>

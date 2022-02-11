@@ -6,7 +6,10 @@
   @apply absolute bg-n10 rounded-2xl overflow-hidden flex flex-col;
 }
 .head {
-  @apply flex justify-between items-center p-6;
+  @apply flex justify-between items-center p-8;
+}
+.head.paddingLess {
+  @apply px-8 pt-8 py-6;
 }
 .close {
   @apply w-4 text-n3 transition-colors hover:text-n2 cursor-pointer;

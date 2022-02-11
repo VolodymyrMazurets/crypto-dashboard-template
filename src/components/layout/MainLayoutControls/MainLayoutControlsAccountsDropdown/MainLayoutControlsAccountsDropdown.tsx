@@ -30,6 +30,7 @@ export const MainLayoutControlsAccountsDropdown: FC<
         isExchange
         value="2"
         label="v.mazurets@merge.rocks"
+        icon="Deribit"
       />
       <RadioButton
         name="account"
@@ -37,6 +38,7 @@ export const MainLayoutControlsAccountsDropdown: FC<
         disabled
         value="3"
         label="v.mazurets@merge.rocks"
+        icon="FTX"
       />
     </div>
   );

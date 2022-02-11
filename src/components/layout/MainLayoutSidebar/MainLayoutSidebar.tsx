@@ -35,6 +35,11 @@ const routes: { to: string; icon: IconType; label: string }[] = [
     icon: "Graph",
     label: "Trading Sandbox",
   },
+  {
+    to: "admin",
+    icon: "Settings",
+    label: "Admin Page",
+  },
 ];
 
 export const MainLayoutSidebar: FC = () => {

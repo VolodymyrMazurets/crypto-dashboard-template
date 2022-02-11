@@ -1,5 +1,5 @@
 .order {
-    @apply pt-7;
+    @apply w-full;
   }
   .summary {
     display: block;

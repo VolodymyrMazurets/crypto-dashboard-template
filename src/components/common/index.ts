@@ -14,3 +14,5 @@ export * from "./UserLabel";
 export * from "./ExchangeLabel";
 export * from "./Dropdown";
 export * from "./Notification";
+export * from "./Slider";
+export * from "./Checkbox";

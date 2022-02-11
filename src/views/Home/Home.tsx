@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import {
   HomeAccountSummary,
+  HomeAdjustModal,
   HomeDaily,
   HomePortfolio,
   HomePositions,
@@ -14,6 +15,7 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 export const Home: FC = withAuthenticationRequired(() => {
   return (
     <>
+      <HomeAdjustModal />
       <div className={styles.controls}>
         <MainLayoutControls />
       </div>
