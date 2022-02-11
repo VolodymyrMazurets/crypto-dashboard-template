@@ -78,6 +78,13 @@ export const MainLayoutSidebar: FC = () => {
               </li>
             ))}
           </ul>
+          <div className={styles.footer}>
+            <div className={styles.wrapper}>
+              <Icon name="Support" />
+              <span className={styles.support}>Support</span>
+            </div>
+            <span className={styles.version}>Kemet. Version 3.3</span>
+          </div>
         </div>
       </Drawer>
     </div>

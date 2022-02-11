@@ -1,5 +1,5 @@
 .menu {
-  @apply h-full py-8 flex-col;
+  @apply h-full py-8 pb-8 flex-col relative;
 }
 .logo {
   @apply ml-8 mb-12;
@@ -29,4 +29,17 @@
 }
 .toggle {
   @apply cursor-pointer hover:text-n1 transition-colors;
+}
+
+.footer {
+  @apply absolute bottom-8 left-8;
+}
+.wrapper {
+  @apply flex items-center gap-3 text-n2 mb-5;
+}
+.support {
+  @apply text-n2 text-sm;
+}
+.version {
+  @apply text-n2 text-xs;
 }
