@@ -11,11 +11,13 @@ import { MainLayoutControls } from "src/components/layout/MainLayoutControls";
 import { HomeMarginRatio } from "src/components/views/Home/HomeMarginRatio";
 import styles from "./Home.module.css";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
+import { HomeClosePositionModal } from "src/components";
 
 export const Home: FC = withAuthenticationRequired(() => {
   return (
     <>
       <HomeAdjustModal />
+      <HomeClosePositionModal />
       <div className={styles.controls}>
         <MainLayoutControls />
       </div>

@@ -4,3 +4,4 @@ export * from "./HomeDaily";
 export * from "./HomeWatchlist";
 export * from "./HomePortfolio";
 export * from "./HomeAdjustModal";
+export * from "./HomeClosePositionModal";

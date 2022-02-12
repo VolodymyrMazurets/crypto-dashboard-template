@@ -5,6 +5,7 @@ export interface IUi {
   isOptionModalOpen: boolean;
   isFeaturesModalOpen: boolean;
   isAdjustModalVisible: boolean;
+  isClosePositionModalOpen: boolean;
 }
 
 const initialState: IUi = {
@@ -12,6 +13,7 @@ const initialState: IUi = {
   isOptionModalOpen: false,
   isFeaturesModalOpen: false,
   isAdjustModalVisible: false,
+  isClosePositionModalOpen: false,
 };
 
 export const uiSlice = createSlice({
@@ -30,6 +32,9 @@ export const uiSlice = createSlice({
     toggleAdjustModal: (state) => {
       state.isAdjustModalVisible = !state.isAdjustModalVisible;
     },
+    toggleClosePositionModal: (state) => {
+      state.isClosePositionModalOpen = !state.isClosePositionModalOpen;
+    },
   },
 });
 
@@ -38,6 +43,7 @@ export const {
   toggleOptionModal,
   toggleFeaturesModal,
   toggleAdjustModal,
+  toggleClosePositionModal,
 } = uiSlice.actions;
 
 export default uiSlice.reducer;

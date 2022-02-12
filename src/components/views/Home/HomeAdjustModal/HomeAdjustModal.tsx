@@ -137,8 +137,13 @@ export const HomeAdjustModal: FC = () => {
           <Slider value={value} onChange={setValue} />
         </div>
         <div className={styles.footer}>
-          <Button type="secondary">Cancel</Button>
-          <Button>Confirm</Button>
+          <Button
+            onClick={() => dispatch(toggleAdjustModal())}
+            type="secondary"
+          >
+            Cancel
+          </Button>
+          <Button onClick={() => dispatch(toggleAdjustModal())}>Confirm</Button>
         </div>
       </div>
     </ModalWindow>

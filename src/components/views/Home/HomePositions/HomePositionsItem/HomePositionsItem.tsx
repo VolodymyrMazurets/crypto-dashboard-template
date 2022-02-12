@@ -3,7 +3,10 @@ import { Dropdown, Icon } from "src/components/common";
 import cn from "classnames";
 import styles from "./HomePositionsItem.module.css";
 import { useAppDispatch } from "src/store";
-import { toggleAdjustModal } from "src/store/slices/ui";
+import {
+  toggleAdjustModal,
+  toggleClosePositionModal,
+} from "src/store/slices/ui";
 import { random } from "lodash";
 
 interface IHomePositionsItemProps {
@@ -24,14 +27,22 @@ export const HomePositionsItem: FC<IHomePositionsItemProps> = ({
         Adjust Leverage
       </button>
       <button className={styles.linkBtn}>TP/SL</button>
-      <button className={styles.linkBtn}>Close Position</button>
+      <button
+        className={styles.linkBtn}
+        onClick={() => dispatch(toggleClosePositionModal())}
+      >
+        Close Position
+      </button>
     </div>
   );
 
   return (
     <div className={cn(styles.item, className)}>
       <div className={styles.head}>
-        <h6 className={styles.title}>{`BTC-10DEC2021-${random(5000, 5700)}C.0`}</h6>
+        <h6 className={styles.title}>{`BTC-10DEC2021-${random(
+          5000,
+          5700
+        )}C.0`}</h6>
         <div className={styles.headWrapper}>
           <Icon name="ExternalLink" className={styles.linkIcon} />
           <Dropdown
