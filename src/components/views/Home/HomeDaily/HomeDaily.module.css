@@ -13,3 +13,10 @@
 .email {
     @apply text-sm text-n3;
 }
+.popverFooter {
+    @apply flex pt-6 border-t px-6 border-n5 gap-3;
+    margin: 20px -24px 0;
+}
+.popverFooter > * {
+    @apply w-full
+}

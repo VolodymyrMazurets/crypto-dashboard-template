@@ -1,0 +1,32 @@
+.chart {
+}
+.header {
+  @apply flex items-center justify-between mb-3;
+}
+.title {
+  @apply text-sm font-bold;
+}
+.wrapper {
+  @apply flex items-center gap-8;
+}
+.periods {
+  @apply flex items-center;
+}
+.button {
+  @apply flex items-center text-n3 bg-ts px-3 h-7 rounded-lg transition-colors hover:text-n0;
+}
+.active {
+  @apply bg-p5 text-n0;
+}
+.cross {
+  @apply w-4 text-n3 hover:text-n2 cursor-pointer;
+}
+.stats {
+  @apply flex items-center gap-3 mb-6;
+}
+.number {
+  @apply text-sm text-r1;
+}
+.name {
+  @apply text-n2;
+}

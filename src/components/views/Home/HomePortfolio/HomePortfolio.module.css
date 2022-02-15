@@ -1,0 +1,22 @@
+.input {
+    @apply mb-6;
+}
+.info {
+    @apply text-sm text-n4 flex mb-4;
+}
+.item {
+    @apply flex items-center gap-3 mb-2;
+}
+.wrapper {
+    @apply flex flex-col items-start gap-1;
+}
+.email {
+    @apply text-sm text-n3;
+}
+.popverFooter {
+    @apply flex pt-6 border-t px-6 border-n5 gap-3;
+    margin: 20px -24px 0;
+}
+.popverFooter > * {
+    @apply w-full
+}

@@ -3,6 +3,12 @@
   max-width: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
+  @apply scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full;
 }
 .table {
   @apply w-full;

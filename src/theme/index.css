@@ -14,3 +14,12 @@
 :root {
   @apply bg-bg1 font-primary text-n0;
 }
+
+@layer components {
+  .scrollbar-thumb-rounded-full::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+  }
+  .scrollbar-track-rounded-full::-webkit-scrollbar-track {
+    border-radius: 9999px;
+  }
+}

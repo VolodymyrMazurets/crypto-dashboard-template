@@ -1,29 +1,34 @@
 .order {
-    @apply w-full;
-  }
-  .summary {
-    display: block;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    margin: 0 -32px 24px;
-  }
-  .table {
-    @apply w-full;
-  }
-  .tableHeadRowCol {
-    @apply text-xs text-n3 pb-4 px-4 first:px-8;
-    text-align: left;
-  }
-  .tableBodyRow {
-    @apply odd:bg-n8;
-  }
-  .tableBodyRowCol {
-    @apply text-sm text-n0 py-5 px-4 first:px-8 whitespace-nowrap;
-  }
-  .tableBodyRowCol.green {
-    @apply text-g2;
-  }
-  .tableBodyRowCol.red {
-    @apply text-r1;
-  }
-  
+  @apply w-full;
+}
+.summary {
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 0 -32px 24px;
+  @apply scrollbar
+    scrollbar-thin
+    scrollbar-thumb-n3
+    scrollbar-track-ts
+    scrollbar-thumb-rounded-full
+    scrollbar-track-rounded-full;
+}
+.table {
+  @apply w-full;
+}
+.tableHeadRowCol {
+  @apply text-xs text-n3 pb-4 px-4 first:px-8;
+  text-align: left;
+}
+.tableBodyRow {
+  @apply odd:bg-n8;
+}
+.tableBodyRowCol {
+  @apply text-sm text-n0 py-5 px-4 first:px-8 whitespace-nowrap;
+}
+.tableBodyRowCol.green {
+  @apply text-g2;
+}
+.tableBodyRowCol.red {
+  @apply text-r1;
+}

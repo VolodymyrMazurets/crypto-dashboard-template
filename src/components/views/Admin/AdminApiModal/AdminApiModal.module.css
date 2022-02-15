@@ -1,5 +1,10 @@
 .modal {
-  @apply p-8 overflow-auto flex flex-col w-full gap-6;
+  @apply p-8 overflow-auto flex flex-col w-full gap-6 scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full;
 }
 .footer {
   @apply flex gap-4 items-center w-full;

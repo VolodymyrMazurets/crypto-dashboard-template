@@ -7,6 +7,9 @@
 .title {
   @apply text-sm;
 }
+.title.active {
+  @apply underline;
+}
 .headWrapper {
   @apply flex items-center gap-3;
 }
@@ -31,25 +34,25 @@
   @apply flex flex-col gap-1;
 }
 .column:nth-child(3n - 1) {
-    @apply col-span-3;
+  @apply col-span-3;
 }
 .column:nth-child(3n - 2) {
-    @apply col-span-2;
+  @apply col-span-2;
 }
 .column:nth-child(3n) {
-    @apply col-span-2;
+  @apply col-span-2;
 }
 .columnTitle {
-    @apply text-sm text-n3; 
+  @apply text-sm text-n3;
 }
 .columnValue {
-    @apply text-sm;
+  @apply text-sm;
 }
 .dropdown {
-    @apply flex flex-col items-start justify-start gap-y-4;
+  @apply flex flex-col items-start justify-start gap-y-4;
 }
 .linkBtn {
-    @apply text-n0
+  @apply text-n0
     text-sm
     hover:text-n1;
 }

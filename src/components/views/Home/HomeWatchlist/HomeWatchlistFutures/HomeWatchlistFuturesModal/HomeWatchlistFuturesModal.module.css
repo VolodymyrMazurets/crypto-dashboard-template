@@ -2,10 +2,20 @@
   @apply flex flex-col h-full;
 }
 .tableWrapper {
-    @apply flex-1 h-full overflow-auto;
+    @apply flex-1 h-full overflow-auto scrollbar
+    scrollbar-thin
+    scrollbar-thumb-n3
+    scrollbar-track-ts
+    scrollbar-thumb-rounded-full
+    scrollbar-track-rounded-full;
 }
 .table {
-  @apply w-full overflow-auto;
+  @apply w-full overflow-auto scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full;
   max-width: 100%;
 }
 .tableHeadRowCol {

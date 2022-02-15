@@ -1,3 +1,4 @@
+import { size, xor } from "lodash";
 import React, { FC, useMemo, useState } from "react";
 import {
   Button,
@@ -14,7 +15,8 @@ import { HomeDailyChart } from "./HomeDailyChart";
 
 export const HomeDaily: FC = () => {
   const [activeFilter, setActiveFilter] = useState<PeriodType>("30 days");
-  const [value, setValue] = useState<string>("1");
+  const [data, setData] = useState<string[]>([]);
+  const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
   const renderDropdownContent = useMemo(() => {
     return (
@@ -24,9 +26,9 @@ export const HomeDaily: FC = () => {
 
         <div className={styles.item}>
           <Checkbox
-            value={value}
-            data={["1", "2", "3"]}
-            onChange={() => setValue("1")}
+            value="1"
+            data={data}
+            onChange={() => setData(xor(data, ["1"]))}
           />
           <div className={styles.wrapper}>
             <Icon name="Binance" />
@@ -35,9 +37,9 @@ export const HomeDaily: FC = () => {
         </div>
         <div className={styles.item}>
           <Checkbox
-            value={value}
-            data={["1", "2", "3"]}
-            onChange={() => setValue("2")}
+            value="2"
+            data={data}
+            onChange={() => setData(xor(data, ["2"]))}
           />
           <div className={styles.wrapper}>
             <Icon name="Binance" />
@@ -46,25 +48,35 @@ export const HomeDaily: FC = () => {
         </div>
         <div className={styles.item}>
           <Checkbox
-            value={value}
-            data={["1", "2", "3"]}
-            onChange={() => setValue("2")}
+            value="3"
+            data={data}
+            onChange={() => setData(xor(data, ["3"]))}
           />
           <div className={styles.wrapper}>
             <Icon name="Binance" />
             <span className={styles.email}>allisonmadsen@example.com</span>
           </div>
+        </div>
+        <div className={styles.popverFooter}>
+          <Button
+            type="secondary"
+            onClick={() => setData([])}
+            disabled={size(data) === 0}
+          >
+            Reset
+          </Button>
+          <Button onClick={() => setSelectedValues(data)}>Compare</Button>
         </div>
       </div>
     );
-  }, [value]);
+  }, [setData, data]);
 
   const renderDropdown = useMemo(() => {
     return (
       <Dropdown
         dropdownContent={renderDropdownContent}
         placement="bottomRight"
-        width={278}
+        width={300}
       >
         <Button type="icon" icon="Scales" />
       </Dropdown>
@@ -85,7 +97,7 @@ export const HomeDaily: FC = () => {
       }
       className={styles.homeDaily}
     >
-      <HomeDailyChart activePeriod={activeFilter} />
+      <HomeDailyChart checked={selectedValues} activePeriod={activeFilter} />
     </WidgetBlock>
   );
 };

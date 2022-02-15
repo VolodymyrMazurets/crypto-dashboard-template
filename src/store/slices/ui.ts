@@ -6,6 +6,14 @@ export interface IUi {
   isFeaturesModalOpen: boolean;
   isAdjustModalVisible: boolean;
   isClosePositionModalOpen: boolean;
+  homeWidgets: {
+    positions: boolean;
+    accountSummary: boolean;
+    dailyPnl: boolean;
+    watchlist: boolean;
+    portfolio: boolean;
+    marginRatio: boolean;
+  };
 }
 
 const initialState: IUi = {
@@ -14,6 +22,14 @@ const initialState: IUi = {
   isFeaturesModalOpen: false,
   isAdjustModalVisible: false,
   isClosePositionModalOpen: false,
+  homeWidgets: {
+    positions: true,
+    accountSummary: true,
+    dailyPnl: true,
+    watchlist: true,
+    portfolio: true,
+    marginRatio: true,
+  },
 };
 
 export const uiSlice = createSlice({

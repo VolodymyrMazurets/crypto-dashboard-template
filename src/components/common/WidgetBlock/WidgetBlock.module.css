@@ -1,5 +1,10 @@
 .wrapper {
-  @apply rounded-2xl bg-n11 w-full overflow-y-auto h-full py-6;
+  @apply rounded-2xl bg-n11 w-full overflow-y-auto h-full py-6 scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full;
 }
 .wrapper.withPadding {
   @apply px-8;

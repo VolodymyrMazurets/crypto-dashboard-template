@@ -1,5 +1,10 @@
 .options {
-  @apply w-full overflow-auto h-full;
+  @apply w-full overflow-auto h-full scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full;
 }
 .head {
   @apply sticky top-0;

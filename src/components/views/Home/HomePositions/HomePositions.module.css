@@ -1,5 +1,15 @@
 .positions {
-  @apply bg-n11 rounded-2xl p-8 h-full overflow-y-auto;
+  @apply bg-n11
+  rounded-2xl
+  p-8
+  h-full
+  scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full
+  overflow-y-auto;
 }
 .head {
   @apply flex items-center justify-between mb-6;

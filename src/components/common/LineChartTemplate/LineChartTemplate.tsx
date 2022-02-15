@@ -13,7 +13,7 @@ import {
 import styles from "./LineChartTemplate.module.css";
 
 interface ILineChartProps {
-  data: { [key: string]: number | string }[];
+  data: { [key: string]: number | string | undefined | false  }[];
 }
 
 export const LineChartTemplate: FC<ILineChartProps> = ({ data }) => {
@@ -109,6 +109,45 @@ export const LineChartTemplate: FC<ILineChartProps> = ({ data }) => {
           dataKey="value"
           stroke="url(#splitColor)"
           filter="url(#shadow)"
+          strokeWidth={2}
+          dot={false}
+          activeDot={{
+            stroke: "white",
+            strokeWidth: 2,
+            r: 3.5,
+            fill: "transparent",
+          }}
+        />
+        <Line
+          type="monotone"
+          dataKey="secondValue"
+          stroke="#5F49D7"
+          strokeWidth={2}
+          dot={false}
+          activeDot={{
+            stroke: "white",
+            strokeWidth: 2,
+            r: 3.5,
+            fill: "transparent",
+          }}
+        />
+        <Line
+          type="monotone"
+          dataKey="thirdValue"
+          stroke="#5AB192"
+          strokeWidth={2}
+          dot={false}
+          activeDot={{
+            stroke: "white",
+            strokeWidth: 2,
+            r: 3.5,
+            fill: "transparent",
+          }}
+        />
+        <Line
+          type="monotone"
+          dataKey="fourthValue"
+          stroke="#373061"
           strokeWidth={2}
           dot={false}
           activeDot={{

@@ -1,5 +1,10 @@
 .modal {
-  @apply p-8 overflow-auto;
+  @apply p-8 overflow-auto scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full;
 }
 .header {
   @apply flex flex-col items-start gap-1 mb-8;

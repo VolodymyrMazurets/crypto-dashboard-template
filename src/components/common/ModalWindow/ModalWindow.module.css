@@ -18,5 +18,10 @@
   @apply text-lg font-semibold;
 }
 .body {
-  @apply h-full overflow-auto;
+  @apply h-full overflow-auto scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full;
 }

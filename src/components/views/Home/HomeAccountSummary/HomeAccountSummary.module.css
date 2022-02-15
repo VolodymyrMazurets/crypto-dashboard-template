@@ -1,5 +1,10 @@
 .account {
-  @apply pt-8 rounded-2xl bg-n11 w-full overflow-y-auto h-full;
+  @apply pt-8 rounded-2xl bg-n11 w-full overflow-y-auto h-full scrollbar
+  scrollbar-thin
+  scrollbar-thumb-n3
+  scrollbar-track-ts
+  scrollbar-thumb-rounded-full
+  scrollbar-track-rounded-full;
 }
 .head {
   @apply flex items-center justify-between px-8;
