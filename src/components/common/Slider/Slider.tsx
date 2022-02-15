@@ -21,7 +21,6 @@ export const Slider: FC<ISliderProps> = ({
       className="Slider"
       marks={[1, 25, 50, 75, 100, 125]}
       renderMark={(props) => {
-        console.log(props);
         return (
           <div
             {...props}

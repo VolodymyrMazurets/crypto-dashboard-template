@@ -1,4 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+export interface IHomeWidgets {
+  positions: boolean;
+  accountSummary: boolean;
+  dailyPnl: boolean;
+  watchlist: boolean;
+  portfolio: boolean;
+  marginRatio: boolean;
+}
 
 export interface IUi {
   isSidebarOpen: boolean;
@@ -6,15 +15,10 @@ export interface IUi {
   isFeaturesModalOpen: boolean;
   isAdjustModalVisible: boolean;
   isClosePositionModalOpen: boolean;
-  homeWidgets: {
-    positions: boolean;
-    accountSummary: boolean;
-    dailyPnl: boolean;
-    watchlist: boolean;
-    portfolio: boolean;
-    marginRatio: boolean;
-  };
+  homeWidgets: IHomeWidgets;
 }
+
+export type PayloadWidget = keyof IUi["homeWidgets"];
 
 const initialState: IUi = {
   isSidebarOpen: false,
@@ -51,6 +55,12 @@ export const uiSlice = createSlice({
     toggleClosePositionModal: (state) => {
       state.isClosePositionModalOpen = !state.isClosePositionModalOpen;
     },
+    disableHomeWidget: (state, action: PayloadAction<PayloadWidget>) => {
+      state.homeWidgets = { ...state.homeWidgets, [action.payload]: false };
+    },
+    enableHomeWidgets: (state, action: PayloadAction<IHomeWidgets>) => {
+      state.homeWidgets = action.payload;
+    },
   },
 });
 
@@ -60,6 +70,8 @@ export const {
   toggleFeaturesModal,
   toggleAdjustModal,
   toggleClosePositionModal,
+  disableHomeWidget,
+  enableHomeWidgets,
 } = uiSlice.actions;
 
 export default uiSlice.reducer;

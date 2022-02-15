@@ -12,8 +12,10 @@ import { HomeMarginRatio } from "src/components/views/Home/HomeMarginRatio";
 import styles from "./Home.module.css";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { HomeClosePositionModal } from "src/components";
+import { useAppSelector } from "src/store";
 
 export const Home: FC = withAuthenticationRequired(() => {
+  const { homeWidgets } = useAppSelector(({ ui }) => ui);
   return (
     <>
       <HomeAdjustModal />
@@ -22,28 +24,40 @@ export const Home: FC = withAuthenticationRequired(() => {
         <MainLayoutControls />
       </div>
       <div className={styles.home}>
-        <div className={styles.positions}>
-          <HomePositions />
-        </div>
+        {homeWidgets.positions && (
+          <div className={styles.positions}>
+            <HomePositions />
+          </div>
+        )}
         <div className={styles.rightBlock}>
-          <div className={styles.account}>
-            <HomeAccountSummary />
+          {homeWidgets.accountSummary && (
+            <div className={styles.account}>
+              <HomeAccountSummary />
+            </div>
+          )}
+          <div className={styles.row}>
+            {homeWidgets.dailyPnl && (
+              <div className={styles.half}>
+                <HomeDaily />
+              </div>
+            )}
+            {homeWidgets.watchlist && (
+              <div className={styles.half}>
+                <HomeWatchlist />
+              </div>
+            )}
           </div>
           <div className={styles.row}>
-            <div className={styles.half}>
-              <HomeDaily />
-            </div>
-            <div className={styles.half}>
-              <HomeWatchlist />
-            </div>
-          </div>
-          <div className={styles.row}>
-            <div className={styles.half}>
-              <HomePortfolio />
-            </div>
-            <div className={styles.half}>
-              <HomeMarginRatio />
-            </div>
+            {homeWidgets.portfolio && (
+              <div className={styles.half}>
+                <HomePortfolio />
+              </div>
+            )}
+            {homeWidgets.marginRatio && (
+              <div className={styles.half}>
+                <HomeMarginRatio />
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -54,7 +54,6 @@ export const HomePositionsItem: FC<IHomePositionsItemProps> = ({
           <span
             onClick={() => {
               setVisible(!visible);
-              console.log(visible);
             }}
             className={cn(styles.title, { [styles.active]: visible })}
           >{`BTC-10DEC2021-${randomName}C.0`}</span>
