@@ -32,7 +32,7 @@ export const Options: FC = withAuthenticationRequired(() => {
       </Drawer>
       <div className={styles.head}>
         <button type="button" className={styles.dropdownButton}>
-          All Exhcnages <Icon name="ChevroneDown" className={styles.chevrone} />
+          All Exchanges <Icon name="ChevroneDown" className={styles.chevrone} />
         </button>
         <Button type="icon" icon="Settings" />
       </div>

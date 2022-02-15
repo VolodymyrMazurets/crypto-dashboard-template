@@ -60,7 +60,7 @@ export const HomeAccountSummary: FC = () => {
         deltaTotal: "9.9876",
       },
       {
-        coin: "ETN",
+        coin: "ETH",
         equity: "9.9876",
         availableBalance: "9.9876",
         marginBalance: "9.9876",
@@ -80,7 +80,7 @@ export const HomeAccountSummary: FC = () => {
         deltaTotal: "9.9876",
       },
       {
-        coin: "ETN",
+        coin: "ETH",
         equity: "9.9876",
         availableBalance: "9.9876",
         marginBalance: "9.9876",

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./AdminExchangeCard.module.css";
 import cn from "classnames";
-import { Icon, LabelElement, UserLabel } from "src/components/common";
+import { Icon, IconType, LabelElement, UserLabel } from "src/components/common";
 import { AdminActionDropdown } from "../AdminActionDropdown";
 import { AdminUsersExchangeDropdown } from "../AdminUsersExchangeDropdown";
 
@@ -9,13 +9,20 @@ interface IAdminExchangeCardProps {
   className?: string;
 }
 
+// Return random string from [Binance, Deribit, FTX]
+const getRandomExchange = () => {
+  const exchanges = ["Binance", "Deribit", "FTX"];
+  const randomIndex = Math.floor(Math.random() * exchanges.length);
+  return exchanges[randomIndex] as IconType;
+};
+
 export const AdminExchangeCard: FC<IAdminExchangeCardProps> = ({
   className,
 }) => {
   return (
     <div className={cn(styles.card, className)}>
       <div className={styles.head}>
-        <Icon name="Binance" className={styles.exchange} />
+        <Icon name={getRandomExchange()} className={styles.exchange} />
         <div className={styles.headControls}>
           <LabelElement type="green">Read-Write</LabelElement>
           <AdminActionDropdown isExchangeTab />

@@ -1,8 +1,15 @@
-import { map, range } from "lodash";
+import { map, random, range } from "lodash";
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { Icon } from "src/components/common";
+import { Icon, IconType } from "src/components/common";
 import styles from "./HomeWatchlistFutures.module.css";
+
+// Return random exchange icon
+const getRandomExchangeIcon = (): IconType => {
+  const icons = ["Binance", "Deribit", "FTX"];
+  const randomIndex = random(0, icons.length - 1);
+  return icons[randomIndex] as IconType;
+};
 
 export const HomeWatchlistFutures: FC = () => {
   const navigate = useNavigate();
@@ -25,7 +32,7 @@ export const HomeWatchlistFutures: FC = () => {
               </div>
             </div>
             <div className={styles.exchange}>
-              <Icon name="Binance" className={styles.exchangeIcon} />
+              <Icon name={getRandomExchangeIcon()} className={styles.exchangeIcon} />
             </div>
           </div>
           <div className={styles.itemContent}>

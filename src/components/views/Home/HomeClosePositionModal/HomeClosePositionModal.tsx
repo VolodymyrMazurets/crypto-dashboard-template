@@ -64,7 +64,7 @@ export const HomeClosePositionModal: FC = () => {
       <div className={styles.modal}>
         <div className={styles.wrapper}>
           <div className={styles.header}>
-            <h2 className={styles.title}>LTCUSDT</h2>
+            <h2 className={styles.title}>BTC-10DEC2021-5599C.0</h2>
             <Icon name="Sticks" />
           </div>
           <div className={styles.table}>

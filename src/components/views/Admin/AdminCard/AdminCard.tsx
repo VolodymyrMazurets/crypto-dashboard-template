@@ -5,6 +5,19 @@ import { ExchangeLabel, LabelElement } from "src/components/common";
 import { AdminActionDropdown } from "../AdminActionDropdown";
 import { AdminUsersDropdown } from "../AdminUsersDropdown";
 
+// Return random string from [Admin, Trader]
+const getRandomUser = () => {
+  const users = ["Admin", "Trader"];
+  const randomIndex = Math.floor(Math.random() * users.length);
+  return users[randomIndex];
+};
+
+const getRandomColor = () => {
+  const colors = [1, 2];
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+};
+
 interface IAdminCardProps {
   className?: string;
   onManageClick?: () => void;
@@ -22,7 +35,7 @@ export const AdminCard: FC<IAdminCardProps> = ({
           <span className={styles.email}>randysaris@gmail.com</span>
         </div>
         <div className={styles.headControls}>
-          <LabelElement>Admin</LabelElement>
+          <LabelElement type={getRandomColor() === 1 ? "green" : "yellow"}>{getRandomUser()}</LabelElement>
           <AdminActionDropdown onManageClick={onManageClick} />
         </div>
       </div>

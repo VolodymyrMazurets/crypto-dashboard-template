@@ -1,9 +1,17 @@
-import { includes, map, range, size, xor } from "lodash";
+import { includes, map, random, range, size, xor } from "lodash";
 import React, { FC, useMemo, useState } from "react";
 import { useTable } from "react-table";
 import cn from "classnames";
 import styles from "./HomeWatchlistFuturesModal.module.css";
-import { Button, Icon } from "src/components/common";
+import { Button, Icon, IconType } from "src/components/common";
+
+// Return random exchange icon
+const getRandomExchangeIcon = () => {
+  const exchanges = ["Binance", "Deribit", "FTX"];
+  const randomIndex = Math.floor(Math.random() * exchanges.length);
+  return exchanges[randomIndex] as IconType;
+};
+
 
 interface IHomeWatchlistFuturesModalProps {
   onCancel?: () => void;
@@ -88,7 +96,7 @@ export const HomeWatchlistFuturesModal: FC<IHomeWatchlistFuturesModalProps> = ({
             Cell: (props: { value: string; row: { index: number } }) => {
               return (
                 <div className={styles.exchange}>
-                  <Icon name="Binance" className={styles.binance} />
+                  <Icon name={getRandomExchangeIcon()} className={styles.exchange} />
                 </div>
               );
             },
@@ -102,7 +110,7 @@ export const HomeWatchlistFuturesModal: FC<IHomeWatchlistFuturesModalProps> = ({
   const data = useMemo(
     () =>
       map(range(10), (item) => ({
-        ticker: item % 2 ? "BTC-PERP" : "ETN-PERP",
+        ticker: item % 2 ? "BTC-PERP" : "ETH-PERP",
         name:
           item % 2 ? "Bitcoin Perpetual Futures" : "Ethereum Perpetual Futures",
         volume: "$3,823,273,273.72",
