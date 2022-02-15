@@ -1,5 +1,6 @@
+import { isUndefined } from "lodash";
 import Tooltip from "rc-tooltip";
-import React, { FC, ReactElement } from "react";
+import React, { FC, ReactElement, useMemo } from "react";
 import styles from "./Dropdown.module.css";
 
 interface IDropdownProps {
@@ -7,6 +8,7 @@ interface IDropdownProps {
   trigger?: string | string[];
   width?: number;
   placement?: string;
+  visible?: boolean;
 }
 
 export const Dropdown: FC<IDropdownProps> = ({
@@ -15,7 +17,17 @@ export const Dropdown: FC<IDropdownProps> = ({
   trigger = ["click"],
   width = 150,
   placement = "bottomRight",
+  visible,
 }) => {
+  const visibleControler = useMemo(
+    () =>
+      isUndefined(visible)
+        ? undefined
+        : {
+            visible,
+          },
+    [visible]
+  );
   return (
     <Tooltip
       overlayClassName={styles.dropdown}
@@ -32,6 +44,7 @@ export const Dropdown: FC<IDropdownProps> = ({
       overlay={dropdownContent}
       trigger={trigger}
       overlayStyle={{ opacity: 1 }}
+      {...visibleControler}
     >
       <a href=" ">{children}</a>
     </Tooltip>
