@@ -1,4 +1,4 @@
-import { includes, map, random, range, size, xor } from "lodash";
+import { includes, map, range, size, xor } from "lodash";
 import React, { FC, useMemo, useState } from "react";
 import { useTable } from "react-table";
 import cn from "classnames";
