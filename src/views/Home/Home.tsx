@@ -13,6 +13,7 @@ import styles from "./Home.module.css";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { HomeClosePositionModal } from "src/components";
 import { useAppSelector } from "src/store";
+import classNames from "classnames";
 
 export const Home: FC = withAuthenticationRequired(() => {
   const { homeWidgets } = useAppSelector(({ ui }) => ui);
@@ -29,7 +30,11 @@ export const Home: FC = withAuthenticationRequired(() => {
             <HomePositions />
           </div>
         )}
-        <div className={styles.rightBlock}>
+        <div
+          className={classNames(styles.rightBlock, {
+            [styles.active]: !homeWidgets.positions,
+          })}
+        >
           {homeWidgets.accountSummary && (
             <div className={styles.account}>
               <HomeAccountSummary />

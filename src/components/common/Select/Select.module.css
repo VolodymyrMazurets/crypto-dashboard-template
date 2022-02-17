@@ -1,0 +1,6 @@
+.option {
+  @apply mb-5 last:mb-0;
+}
+.label {
+  @apply font-medium text-sm mb-3;
+}
