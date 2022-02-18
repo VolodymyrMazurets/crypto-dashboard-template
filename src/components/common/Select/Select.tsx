@@ -1,26 +1,21 @@
-import React, { FC, RefCallback } from "react";
+import React, { FC } from "react";
 import ReactSelect, {
-  components,
   ControlProps,
   CSSObjectWithLabel,
   DropdownIndicatorProps,
   GroupBase,
   StylesConfig,
 } from "react-select";
-import { Icon, IconType } from "..";
+import { IconType } from "..";
 import styles from "./Select.module.css";
+import { SelectCustomOption } from "./SelectCustomOption";
+import SelectCustomSingleValue from "./SelectCustomSingleValue/SelectCustomSingleValue";
 
 export interface OptionInterface {
-  readonly value: string;
-  readonly label: string;
-  readonly icon: IconType;
+  value: string;
+  label?: string;
+  icon?: IconType;
 }
-
-export const mockData: readonly OptionInterface[] = [
-  { value: "binance", label: "Binance", icon: "Binance" },
-  { value: "deribit", label: "Deribit", icon: "Deribit" },
-  { value: "ftx", label: "FTX", icon: "FTX" },
-];
 
 const customStyles: StylesConfig<
   OptionInterface,
@@ -83,43 +78,29 @@ const customStyles: StylesConfig<
     padding: 24,
   }),
 };
-
-const CustomOption = ({
-  innerProps,
-  innerRef,
-  data,
-}: {
-  innerProps: JSX.IntrinsicElements["div"];
-  innerRef: RefCallback<HTMLDivElement>;
-  data: OptionInterface;
-}) => (
-  <div {...innerProps} ref={innerRef} className={styles.option}>
-    <Icon name={data.icon} />
-  </div>
-);
-
-const CustomControl = ({
-  children,
-  ...props
-}: ControlProps<OptionInterface, false>) => {
-  return <components.Control {...props}>{children}</components.Control>;
-};
-
 interface ISelectProps {
   label?: string;
+  data: OptionInterface[];
+  placeholder?: string;
 }
-export const Select: FC<ISelectProps> = ({ label }) => {
+
+export const Select: FC<ISelectProps> = ({
+  label,
+  data,
+  placeholder = "Select",
+}) => {
   return (
     <div>
       {label && <h4 className={styles.label}>{label}</h4>}
       <ReactSelect
         components={{
           IndicatorSeparator: () => null,
-          Option: CustomOption,
-          Control: CustomControl,
+          Option: SelectCustomOption,
+          SingleValue: SelectCustomSingleValue,
         }}
-        options={mockData}
+        options={data}
         styles={customStyles}
+        placeholder={placeholder}
       />
     </div>
   );

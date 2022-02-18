@@ -25,8 +25,8 @@ export const AdminExchange: FC<IAdminExchangeProps> = ({ isListMode }) => {
                 </div>
               </div>
               <div className={styles.col}>
-                <LabelElement type={idx === 0 ? "yellow" : "green"}>
-                  {idx === 0 ? "Admin" : "Trader"}
+                <LabelElement type={idx === 0 ? "red" : "green"}>
+                  {idx === 0 ? "Disabled" : "Enabled"}
                 </LabelElement>
               </div>
               <div className={classNames(styles.col, styles.exchange)}>

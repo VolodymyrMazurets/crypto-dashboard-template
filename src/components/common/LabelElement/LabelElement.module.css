@@ -11,3 +11,7 @@
   background: rgba(91, 116, 248, 0.2);
   color: #899cff;
 }
+.label.red {
+  background: rgba(185, 64, 144, 0.2);
+  color: #b94073;
+}

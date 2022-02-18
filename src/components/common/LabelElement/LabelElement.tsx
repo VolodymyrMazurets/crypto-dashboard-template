@@ -4,7 +4,7 @@ import cn from "classnames";
 
 interface ILabelProps {
   className?: string;
-  type?: "yellow" | "green" | "blue";
+  type?: "yellow" | "green" | "blue" | "red";
 }
 
 export const LabelElement: FC<ILabelProps> = ({

@@ -1,7 +1,5 @@
 import classNames from "classnames";
 import React, { FC } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { toast } from "react-toastify";
 import {
   Button,
   ExchangeLabel,
@@ -25,7 +23,7 @@ export const AdminUserManagementModal: FC = () => {
             Change
           </button>
         </div>
-        <div className={styles.api}>
+        {/* <div className={styles.api}>
           <h4 className={classNames(styles.subtitle, styles.withMargin)}>
             API Key
           </h4>
@@ -45,10 +43,10 @@ export const AdminUserManagementModal: FC = () => {
               Generate New API Key
             </button>
           </div>
-        </div>
+        </div> */}
         <div className={styles.accounts}>
           <ExchangeLabel exhcange="binance" email="randysaris@gmail.com" />
-          <div className={styles.copy}>
+          {/* <div className={styles.copy}>
             <span className={styles.copyText}>
               zaCELgL.0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx
             </span>
@@ -58,7 +56,7 @@ export const AdminUserManagementModal: FC = () => {
             >
               <Icon name="Copy" className={styles.copyButton} />
             </CopyToClipboard>
-          </div>
+          </div> */}
         </div>
         <button type="button" className={classNames(styles.subtle, styles.add)}>
           <Icon name="Plus" className={styles.icon} />

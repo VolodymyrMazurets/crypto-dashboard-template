@@ -1,0 +1,9 @@
+.option {
+  @apply mb-5 last:mb-0 flex items-center gap-2 cursor-pointer;
+}
+.value {
+  @apply text-sm font-medium;
+}
+.icon {
+    @apply text-n2;
+}

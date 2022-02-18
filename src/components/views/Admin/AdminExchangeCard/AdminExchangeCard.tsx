@@ -4,6 +4,7 @@ import cn from "classnames";
 import { Icon, IconType, LabelElement, UserLabel } from "src/components/common";
 import { AdminActionDropdown } from "../AdminActionDropdown";
 import { AdminUsersExchangeDropdown } from "../AdminUsersExchangeDropdown";
+import classNames from "classnames";
 
 interface IAdminExchangeCardProps {
   className?: string;
@@ -24,26 +25,22 @@ export const AdminExchangeCard: FC<IAdminExchangeCardProps> = ({
       <div className={styles.head}>
         <Icon name={getRandomExchange()} className={styles.exchange} />
         <div className={styles.headControls}>
-          <LabelElement type="green">Read-Write</LabelElement>
+          <LabelElement type="red">Disabled</LabelElement>
           <AdminActionDropdown isExchangeTab />
         </div>
       </div>
       <div className={styles.adress}>
         <span className={styles.title}>Randy Saris</span>
-        <span className={styles.code}>
-          zaCELgL.0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx
-        </span>
       </div>
       <div className={styles.row}>
-        <div className={styles.col}>
-          <span className={styles.name}>Portfolio</span>
-          <span className={styles.value}>Main Portfolio</span>
-        </div>
         <div className={styles.col}>
           <span className={styles.name}>Subaccount Name</span>
           <span className={styles.value}>defaultaccount</span>
         </div>
       </div>
+      <span className={classNames(styles.name, "flex mb-2")}>
+        USERS WITH ACCESS
+      </span>
       <div className={styles.body}>
         <div className={styles.labels}>
           <UserLabel

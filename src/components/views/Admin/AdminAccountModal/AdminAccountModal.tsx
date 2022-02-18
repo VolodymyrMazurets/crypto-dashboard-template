@@ -1,12 +1,17 @@
 import React, { FC } from "react";
-import { Button, Input, Select } from "src/components/common";
+import { Button, Input, OptionInterface, Select } from "src/components/common";
 import styles from "./AdminAccountModal.module.css";
+
+export const mockData: OptionInterface[] = [
+  { value: "binance", icon: "Binance" },
+  { value: "deribit", icon: "Deribit" },
+  { value: "ftx", icon: "FTX" },
+];
 
 export const AdminAccountModal: FC = () => {
   return (
     <div className={styles.modal}>
-      <Input isLightMode label="Portfolio" placeholder="Select Portfolio" />
-      <Select label="Exchange" />
+      <Select data={mockData} label="Exchange" />
       <Input isLightMode label="Name" placeholder="Specify Account Name" />
       <Input isLightMode label="API Key" placeholder="API Key" />
       <Input isLightMode label="Secret Key" placeholder="Secret Key" />
