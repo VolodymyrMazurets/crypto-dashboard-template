@@ -1,10 +1,14 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Button, Switch } from "src/components/common";
 import Tooltip from "rc-tooltip";
 import styles from "./MainLayoutControlsSettingsDropdown.module.css";
 import "./MainLayoutControlsSettingsDropdown.css";
 import "rc-tooltip/assets/bootstrap.css";
-import { enableHomeWidgets, IHomeWidgets, PayloadWidget } from "src/store/slices/ui";
+import {
+  enableHomeWidgets,
+  IHomeWidgets,
+  PayloadWidget,
+} from "src/store/slices/ui";
 import { useAppDispatch, useAppSelector } from "src/store";
 import { map } from "lodash";
 
@@ -39,6 +43,10 @@ export const MainLayoutControlsSettingsDropdown: FC = () => {
   const { homeWidgets } = useAppSelector(({ ui }) => ui);
   const [vidgets, setVidgets] = useState<IHomeWidgets>(homeWidgets);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    setVidgets(homeWidgets);
+  }, [homeWidgets]);
 
   const dropdownContent = (
     <div className={styles.content}>

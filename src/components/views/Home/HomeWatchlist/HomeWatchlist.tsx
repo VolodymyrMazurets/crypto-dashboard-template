@@ -9,7 +9,7 @@ import {
   IGroupItemType,
 } from "src/components/common";
 import { useAppDispatch, useAppSelector } from "src/store";
-import { toggleFeaturesModal, toggleOptionModal } from "src/store/slices/ui";
+import { disableHomeWidget, toggleFeaturesModal, toggleOptionModal } from "src/store/slices/ui";
 import styles from "./HomeWatchlist.module.css";
 import { HomeWatchlistFutures } from "./HomeWatchlistFutures";
 import { HomeWatchlistFuturesModal } from "./HomeWatchlistFutures/HomeWatchlistFuturesModal";
@@ -70,7 +70,12 @@ export const HomeWatchlist: FC = () => {
     <WidgetBlock
       withPadding={false}
       title="Watchlist"
-      renderHeaderControls={<WidgetControls onButtonClick={onAddClick} />}
+      renderHeaderControls={
+        <WidgetControls
+          onButtonClick={onAddClick}
+          onCloseClick={() => dispatch(disableHomeWidget("watchlist"))}
+        />
+      }
       className={styles.watchlist}
       headerClassName={styles.header}
     >

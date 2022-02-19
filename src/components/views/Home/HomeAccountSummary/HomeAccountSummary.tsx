@@ -1,9 +1,13 @@
 import React, { FC, useMemo } from "react";
 import { useTable } from "react-table";
 import { Icon } from "src/components/common";
+import { useAppDispatch } from "src/store";
+import { disableHomeWidget } from "src/store/slices/ui";
 import styles from "./HomeAccountSummary.module.css";
 
 export const HomeAccountSummary: FC = () => {
+  const dispatch = useAppDispatch();
+
   const columns = useMemo(
     () => [
       {
@@ -104,7 +108,11 @@ export const HomeAccountSummary: FC = () => {
         <h4 className={styles.title}>Account Summary</h4>
         <div className={styles.headWrapper}>
           <Icon name="Resize" className={styles.headIcon} />
-          <Icon name="Cross" className={styles.headIcon} />
+          <Icon
+            name="Cross"
+            className={styles.headIcon}
+            onClick={() => dispatch(disableHomeWidget("accountSummary"))}
+          />
         </div>
       </div>
       <div className={styles.wrapper}>

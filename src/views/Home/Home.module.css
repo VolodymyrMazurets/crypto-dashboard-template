@@ -1,5 +1,5 @@
 .home {
-  @apply flex h-full gap-4;
+  @apply flex h-full gap-4 items-start;
   max-height: 1138px;
   overflow: hidden;
 }

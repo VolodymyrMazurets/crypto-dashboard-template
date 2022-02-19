@@ -1,12 +1,21 @@
 import React, { FC } from "react";
 import { WidgetBlock, WidgetControls } from "src/components/common";
+import { useAppDispatch } from "src/store";
+import { disableHomeWidget } from "src/store/slices/ui";
 import styles from "./HomeMarginRatio.module.css";
 
 export const HomeMarginRatio: FC = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <WidgetBlock
       title="Margin Ratio"
-      renderHeaderControls={<WidgetControls buttonIcon="Scales" />}
+      renderHeaderControls={
+        <WidgetControls
+          buttonIcon="Scales"
+          onCloseClick={() => dispatch(disableHomeWidget("marginRatio"))}
+        />
+      }
       className={styles.watchlist}
     >
       <div className={styles.content}>

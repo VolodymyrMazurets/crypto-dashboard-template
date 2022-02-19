@@ -10,6 +10,8 @@ import {
   WidgetBlock,
   WidgetControls,
 } from "src/components/common";
+import { useAppDispatch } from "src/store";
+import { disableHomeWidget } from "src/store/slices/ui";
 import styles from "./HomeDaily.module.css";
 import { HomeDailyChart } from "./HomeDailyChart";
 
@@ -17,6 +19,7 @@ export const HomeDaily: FC = () => {
   const [activeFilter, setActiveFilter] = useState<PeriodType>("30 days");
   const [data, setData] = useState<string[]>([]);
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
+  const dispatch = useAppDispatch();
 
   const renderDropdownContent = useMemo(() => {
     return (
@@ -93,6 +96,7 @@ export const HomeDaily: FC = () => {
           onFilterClick={setActiveFilter}
           activeFilter={activeFilter}
           renderCustomButton={renderDropdown}
+          onCloseClick={() => dispatch(disableHomeWidget("dailyPnl"))}
         />
       }
       className={styles.homeDaily}

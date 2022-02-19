@@ -55,8 +55,8 @@ export const uiSlice = createSlice({
     toggleClosePositionModal: (state) => {
       state.isClosePositionModalOpen = !state.isClosePositionModalOpen;
     },
-    disableHomeWidget: (state, action: PayloadAction<PayloadWidget>) => {
-      state.homeWidgets = { ...state.homeWidgets, [action.payload]: false };
+    disableHomeWidget: (state, action: PayloadAction<keyof IHomeWidgets>) => {
+      state.homeWidgets[action.payload] = false;
     },
     enableHomeWidgets: (state, action: PayloadAction<IHomeWidgets>) => {
       state.homeWidgets = action.payload;
