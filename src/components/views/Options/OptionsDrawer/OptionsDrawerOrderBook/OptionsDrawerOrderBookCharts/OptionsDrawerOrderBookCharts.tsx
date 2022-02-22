@@ -132,7 +132,7 @@ export const OptionsDrawerOrderBookCharts: FC = () => {
       </div>
       <div className={styles.stats}>
         {map(numbers, (item) => (
-          <span key={item.name} className={styles.number}>
+          <span key={item.name + item.value} className={styles.number}>
             <span className={styles.name}>{item.name}</span>
             {item.value}
           </span>

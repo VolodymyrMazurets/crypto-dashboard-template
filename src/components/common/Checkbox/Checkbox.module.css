@@ -24,6 +24,9 @@
 .area {
   @apply w-5 h-5 justify-center items-center bg-n11 border-n11 rounded transition-colors inline-flex;
 }
+.area {
+  @apply bg-n8 border-n8;
+}
 .check {
   display: none;
   @apply w-4 text-n0;

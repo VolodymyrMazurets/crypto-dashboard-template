@@ -1,10 +1,27 @@
-import React, { FC, useState } from "react";
-import { Button, Icon, Input, Tabs } from "src/components/common";
+import React, { FC, useMemo, useState } from "react";
+import { Icon, Tabs } from "src/components/common";
 import { MainLayoutControlsAccountsDropdown } from "src/components/layout/MainLayoutControls/MainLayoutControlsAccountsDropdown";
+import { OptionsDrawerBuyTab } from "../../Options/OptionsDrawer/OptionsDrawerBuyTab";
+import { OptionsDrawerLimitTab } from "../../Options/OptionsDrawer/OptionsDrawerLimitTab";
+import { OptionsDrawerMarketTab } from "../../Options/OptionsDrawer/OptionsDrawerMarketTab";
+import { OptionsDrawerStopTab } from "../../Options/OptionsDrawer/OptionsDrawerStopTab";
 import styles from "./FuturesMarketTrading.module.css";
 
 export const FuturesMarketTrading: FC = () => {
   const [activeTab, setActiveTab] = useState("Market");
+
+  const renderTab = useMemo(() => {
+    switch (activeTab) {
+      case "Limit":
+        return <OptionsDrawerLimitTab isLightMode />;
+      case "Stop Loss":
+        return <OptionsDrawerStopTab isLightMode />;
+      case "Buy Limit":
+        return <OptionsDrawerBuyTab isLightMode />;
+      default:
+        return <OptionsDrawerMarketTab isLightMode />;
+    }
+  }, [activeTab]);
 
   return (
     <div className={styles.trading}>
@@ -20,28 +37,7 @@ export const FuturesMarketTrading: FC = () => {
           <MainLayoutControlsAccountsDropdown isLight />
           <Icon name="Info" className={styles.info} />
         </div>
-        <div className={styles.row}>
-          <Input isLightMode label="Market Price" className={styles.input} />
-          <Input isLightMode className={styles.input} />
-        </div>
-        <div className={styles.row}>
-          <Input isLightMode label="Amount" className={styles.input} />
-          <Input isLightMode className={styles.input} />
-        </div>
-        <div className={styles.buttons}>
-          <Button type="success">Buy</Button>
-          <Button type="danger">Sell</Button>
-        </div>
-        <div className={styles.margin}>
-          <div className={styles.marginWrapper}>
-            <span className={styles.name}>Buy Margin</span>
-            <span className={styles.value}>0.0292</span>
-          </div>
-          <div className={styles.marginWrapper}>
-            <span className={styles.name}>Sell Margin</span>
-            <span className={styles.value}>0.1892</span>
-          </div>
-        </div>
+        {renderTab}
       </div>
     </div>
   );

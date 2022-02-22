@@ -2,7 +2,9 @@ import React, { FC, useState } from "react";
 import { Button, Checkbox, Input } from "src/components/common";
 import styles from "./OptionsDrawerMarketTab.module.css";
 
-export const OptionsDrawerMarketTab: FC = () => {
+export const OptionsDrawerMarketTab: FC<{ isLightMode?: boolean }> = ({
+  isLightMode,
+}) => {
   const [state, setState] = useState({
     first: "56,928",
     second: "1,000",
@@ -23,6 +25,7 @@ export const OptionsDrawerMarketTab: FC = () => {
           className={styles.input}
           value={state.first}
           onChange={(v) => onChange(v, "first")}
+          isLightMode={isLightMode}
         />
         <Input
           prefix="≈"
@@ -30,6 +33,7 @@ export const OptionsDrawerMarketTab: FC = () => {
           className={styles.input}
           value={state.second}
           onChange={(v) => onChange(v, "second")}
+          isLightMode={isLightMode}
         />
       </div>
       <div className={styles.row}>
@@ -39,6 +43,7 @@ export const OptionsDrawerMarketTab: FC = () => {
           className={styles.input}
           value={state.third}
           onChange={(v) => onChange(v, "third")}
+          isLightMode={isLightMode}
         />
         <Input
           prefix="≈"
@@ -46,12 +51,14 @@ export const OptionsDrawerMarketTab: FC = () => {
           className={styles.input}
           value={state.fourth}
           onChange={(v) => onChange(v, "fourth")}
+          isLightMode={isLightMode}
         />
       </div>
       <div className={styles.checkbox}>
         <Checkbox
           value={checked}
           onChange={(value) => setChecked(value as boolean)}
+          isLightMode={isLightMode}
         />
         <span className={styles.label}>Reduce</span>
       </div>

@@ -13,6 +13,7 @@ interface ICheckboxProps {
   value: string | number | boolean;
   onChange: (value: boolean | ICheckboxProps["data"]) => void;
   stopPropagation?: boolean;
+  isLightMode?: boolean;
 }
 
 export const Checkbox: FC<ICheckboxProps> = ({
@@ -23,6 +24,7 @@ export const Checkbox: FC<ICheckboxProps> = ({
   className,
   disabled,
   stopPropagation,
+  isLightMode,
 }) => {
   const id = useMemo(() => uniqueId("id-"), []);
 
@@ -67,7 +69,9 @@ export const Checkbox: FC<ICheckboxProps> = ({
         className={styles.input}
         name={name}
       />
-      <span className={styles.area}>
+      <span
+        className={classNames(styles.area, { [styles.light]: isLightMode })}
+      >
         <Icon name="Checkmark" className={styles.check} />
       </span>
     </label>

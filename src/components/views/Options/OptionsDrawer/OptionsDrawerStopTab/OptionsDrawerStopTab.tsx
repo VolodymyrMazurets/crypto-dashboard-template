@@ -2,7 +2,9 @@ import React, { FC, useState } from "react";
 import { Button, Checkbox, Input } from "src/components/common";
 import styles from "./OptionsDrawerStopTab.module.css";
 
-export const OptionsDrawerStopTab: FC = () => {
+export const OptionsDrawerStopTab: FC<{ isLightMode?: boolean }> = ({
+  isLightMode,
+}) => {
   const [state, setState] = useState({
     first: "56,928",
     second: "1,000",
@@ -26,6 +28,7 @@ export const OptionsDrawerStopTab: FC = () => {
           className={styles.input}
           value={state.first}
           onChange={(v) => onChange(v, "first")}
+          isLightMode={isLightMode}
         />
         <Input
           prefix="≈"
@@ -33,6 +36,7 @@ export const OptionsDrawerStopTab: FC = () => {
           className={styles.input}
           value={state.second}
           onChange={(v) => onChange(v, "second")}
+          isLightMode={isLightMode}
         />
       </div>
       <div className={styles.row}>
@@ -42,6 +46,7 @@ export const OptionsDrawerStopTab: FC = () => {
           className={styles.input}
           value={state.third}
           onChange={(v) => onChange(v, "third")}
+          isLightMode={isLightMode}
         />
         <Input
           prefix="≈"
@@ -49,6 +54,7 @@ export const OptionsDrawerStopTab: FC = () => {
           className={styles.input}
           value={state.fourth}
           onChange={(v) => onChange(v, "fourth")}
+          isLightMode={isLightMode}
         />
       </div>
       <div className={styles.row}>
@@ -58,6 +64,7 @@ export const OptionsDrawerStopTab: FC = () => {
           className={styles.input}
           value={state.third}
           onChange={(v) => onChange(v, "third")}
+          isLightMode={isLightMode}
         />
         <Input
           prefix="≈"
@@ -66,6 +73,7 @@ export const OptionsDrawerStopTab: FC = () => {
           className={styles.input}
           value={state.fourth}
           onChange={(v) => onChange(v, "fourth")}
+          isLightMode={isLightMode}
         />
       </div>
       <div className={styles.rowLast}>
@@ -73,6 +81,7 @@ export const OptionsDrawerStopTab: FC = () => {
           <Checkbox
             value={reduce}
             onChange={(value) => setReduce(value as boolean)}
+            isLightMode={isLightMode}
           />
           <span className={styles.label}>Reduce</span>
         </div>
@@ -80,6 +89,7 @@ export const OptionsDrawerStopTab: FC = () => {
           <Checkbox
             value={checked}
             onChange={(value) => setChecked(value as boolean)}
+            isLightMode={isLightMode}
           />
           <span className={styles.label}>Post</span>
         </div>
@@ -87,6 +97,7 @@ export const OptionsDrawerStopTab: FC = () => {
           <Checkbox
             value={hidden}
             onChange={(value) => setHidden(value as boolean)}
+            isLightMode={isLightMode}
           />
           <span className={styles.label}>Hidden</span>
         </div>

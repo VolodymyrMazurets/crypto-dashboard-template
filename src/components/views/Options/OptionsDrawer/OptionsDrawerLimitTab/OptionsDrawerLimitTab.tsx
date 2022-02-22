@@ -3,7 +3,9 @@ import React, { FC, useMemo, useState } from "react";
 import { Button, Checkbox, Dropdown, Icon, Input } from "src/components/common";
 import styles from "./OptionsDrawerLimitTab.module.css";
 
-export const OptionsDrawerLimitTab: FC = () => {
+export const OptionsDrawerLimitTab: FC<{ isLightMode?: boolean }> = ({
+  isLightMode,
+}) => {
   const [state, setState] = useState({
     first: "56,928",
     second: "1,000",
@@ -31,6 +33,7 @@ export const OptionsDrawerLimitTab: FC = () => {
           className={styles.input}
           value={state.first}
           onChange={(v) => onChange(v, "first")}
+          isLightMode={isLightMode}
         />
         <Input
           prefix="≈"
@@ -38,6 +41,7 @@ export const OptionsDrawerLimitTab: FC = () => {
           className={styles.input}
           value={state.second}
           onChange={(v) => onChange(v, "second")}
+          isLightMode={isLightMode}
         />
       </div>
       <div className={styles.row}>
@@ -46,6 +50,7 @@ export const OptionsDrawerLimitTab: FC = () => {
           label="Amount"
           className={styles.input}
           value={state.third}
+          isLightMode={isLightMode}
           onChange={(v) => onChange(v, "third")}
         />
         <Input
@@ -54,6 +59,7 @@ export const OptionsDrawerLimitTab: FC = () => {
           className={styles.input}
           value={state.fourth}
           onChange={(v) => onChange(v, "fourth")}
+          isLightMode={isLightMode}
         />
       </div>
       <div className={styles.rowLast}>
@@ -71,7 +77,11 @@ export const OptionsDrawerLimitTab: FC = () => {
           setIsDropdownVisible={setIsDropdownVisible}
           zIndex={10000}
         >
-          <button className={styles.dropdown}>
+          <button
+            className={classNames(styles.dropdown, {
+              [styles.light]: isLightMode,
+            })}
+          >
             <div className={styles.dropdownWrapper}>
               <span className={styles.text}>GTC</span>
               <Icon name="Info" className={styles.info} />
