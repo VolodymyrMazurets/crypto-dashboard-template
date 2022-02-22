@@ -8,6 +8,7 @@
   @apply bg-n11
     rounded-lg
     outline-none
+    text-sm
     text-n0
     border-2
     transition-colors
@@ -26,6 +27,26 @@
 .input.light {
   @apply bg-n8 border-n8;
 }
+.input.withPrefix {
+  @apply pl-7;
+}
 .sublabel {
   @apply text-sm text-n3 italic inline-block ml-2;
+}
+.inputWrapper {
+  @apply relative;
+}
+.prefix {
+  @apply text-sm
+  text-n0
+  absolute
+  left-4;
+  top: 10px;
+}
+.sufix {
+  @apply text-sm
+  text-n2
+  absolute
+  right-3;
+  top: 10px;
 }

@@ -8,6 +8,10 @@ interface IInputProps {
   subLabel?: string;
   isLightMode?: boolean;
   placeholder?: string;
+  prefix?: string;
+  sufix?: string;
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
 export const Input: FC<IInputProps> = ({
@@ -16,6 +20,10 @@ export const Input: FC<IInputProps> = ({
   subLabel,
   isLightMode,
   placeholder,
+  prefix,
+  sufix,
+  value,
+  onChange,
 }) => {
   return (
     <label className={cn(styles.wrapper, className)}>
@@ -25,11 +33,20 @@ export const Input: FC<IInputProps> = ({
           {subLabel && <span className={styles.sublabel}>{subLabel}</span>}
         </span>
       )}
-      <input
-        type="text"
-        className={cn(styles.input, { [styles.light]: isLightMode })}
-        placeholder={placeholder}
-      />
+      <div className={styles.inputWrapper}>
+        {prefix && <span className={styles.prefix}>{prefix}</span>}
+        {sufix && <span className={styles.sufix}>{sufix}</span>}
+        <input
+          type="text"
+          className={cn(styles.input, {
+            [styles.light]: isLightMode,
+            [styles.withPrefix]: prefix,
+          })}
+          placeholder={placeholder}
+          value={value}
+          onChange={(v) => onChange && onChange(v.target.value)}
+        />
+      </div>
     </label>
   );
 };

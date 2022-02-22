@@ -1,0 +1,21 @@
+.row {
+  @apply flex items-end w-full gap-6 mb-6;
+}
+.input {
+  width: 100%;
+}
+.buttons {
+  @apply flex items-center gap-6 mb-8;
+}
+.buttons > * {
+  @apply flex-1;
+}
+.checkboxWrapper {
+  @apply flex items-center gap-3;
+}
+.label {
+  @apply text-sm;
+}
+.rowLast {
+  @apply flex items-center gap-8 mb-8;
+}

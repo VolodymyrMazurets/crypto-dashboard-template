@@ -1,0 +1,30 @@
+.row {
+  @apply flex items-end w-full gap-6 mb-6;
+}
+.input {
+  width: 100%;
+}
+.buttons {
+  @apply flex items-center gap-6 mb-4;
+}
+.buttons > * {
+  @apply flex-1;
+}
+.margin {
+  @apply flex justify-between mb-8;
+}
+.marginWrapper {
+  @apply flex flex-col items-start last:items-end;
+}
+.name {
+  @apply text-xs text-n3;
+}
+.value {
+  @apply text-sm;
+}
+.checkbox {
+    @apply flex items-center gap-3 mb-8;
+}
+.label {
+    @apply text-sm;
+}
