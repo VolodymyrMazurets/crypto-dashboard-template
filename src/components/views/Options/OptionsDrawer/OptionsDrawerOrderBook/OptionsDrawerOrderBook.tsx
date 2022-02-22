@@ -5,6 +5,7 @@ import cn from "classnames";
 import styles from "./OptionsDrawerOrderBook.module.css";
 import { Tabs } from "src/components/common";
 import { OptionsDrawerOrderBookRecent } from "./OptionsDrawerOrderBookRecent";
+import { OptionsDrawerOrderBookCharts } from "./OptionsDrawerOrderBookCharts";
 
 export const OptionsDrawerOrderBook: FC = () => {
   const [activeTab, setActiveTab] = useState("Recent Trades");
@@ -74,7 +75,7 @@ export const OptionsDrawerOrderBook: FC = () => {
         return <OptionsDrawerOrderBookRecent />;
 
       default:
-        return <div>Charts</div>;
+        return <OptionsDrawerOrderBookCharts />;
     }
   };
 

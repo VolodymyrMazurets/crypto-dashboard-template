@@ -9,6 +9,8 @@ interface IDropdownProps {
   width?: number;
   placement?: string;
   visible?: boolean;
+  zIndex?: number;
+  setIsDropdownVisible?: (v: boolean) => void;
 }
 
 export const Dropdown: FC<IDropdownProps> = ({
@@ -18,6 +20,8 @@ export const Dropdown: FC<IDropdownProps> = ({
   width = 150,
   placement = "bottomRight",
   visible,
+  zIndex = 1070,
+  setIsDropdownVisible,
 }) => {
   const visibleControler = useMemo(
     () =>
@@ -31,6 +35,7 @@ export const Dropdown: FC<IDropdownProps> = ({
   return (
     <Tooltip
       overlayClassName={styles.dropdown}
+      afterVisibleChange={setIsDropdownVisible}
       overlayInnerStyle={{
         background: "#252533",
         boxShadow: "0px 4px 32px rgba(14, 15, 19, 0.29)",
@@ -43,7 +48,7 @@ export const Dropdown: FC<IDropdownProps> = ({
       placement={placement}
       overlay={dropdownContent}
       trigger={trigger}
-      overlayStyle={{ opacity: 1 }}
+      overlayStyle={{ opacity: 1, zIndex }}
       {...visibleControler}
     >
       <a href=" ">{children}</a>

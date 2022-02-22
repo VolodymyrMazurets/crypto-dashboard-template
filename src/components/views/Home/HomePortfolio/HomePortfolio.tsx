@@ -6,6 +6,8 @@ import {
   Dropdown,
   Icon,
   Input,
+  ModalWindow,
+  Periods,
   PeriodType,
   WidgetBlock,
   WidgetControls,
@@ -18,6 +20,7 @@ import styles from "./HomePortfolio.module.css";
 export const HomePortfolio: FC = () => {
   const [activeFilter, setActiveFilter] = useState<PeriodType>("30 days");
   const [data, setData] = useState<string[]>([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
   const dispatch = useAppDispatch();
 
@@ -80,6 +83,7 @@ export const HomePortfolio: FC = () => {
         dropdownContent={renderDropdownContent}
         placement="bottomRight"
         width={300}
+        zIndex={10001}
       >
         <Button type="icon" icon="Scales" />
       </Dropdown>
@@ -87,22 +91,53 @@ export const HomePortfolio: FC = () => {
   }, [renderDropdownContent]);
 
   return (
-    <WidgetBlock
-      title="Portfolio"
-      renderHeaderControls={
-        <WidgetControls
-          buttonIcon="Scales"
-          withFilters
-          onFilterClick={setActiveFilter}
-          activeFilter={activeFilter}
-          renderCustomButton={renderDropdown}
-          onCloseClick={() => dispatch(disableHomeWidget("portfolio"))}
-        />
-      }
-      className={styles.portfolio}
-    >
-      <HomeDailyChart checked={selectedValues} activePeriod={activeFilter} />
-    </WidgetBlock>
+    <>
+      <ModalWindow
+        isOpen={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+        title="Portfolio"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 1042,
+          height: 462,
+        }}
+        renderHeadContent={
+          <div className={styles.controls}>
+            <Periods
+              activePeriod={activeFilter}
+              setActivePeriod={setActiveFilter}
+            />
+            {renderDropdown}
+          </div>
+        }
+      >
+        <div className={styles.modal}>
+          <HomeDailyChart
+            checked={selectedValues}
+            activePeriod={activeFilter}
+          />
+        </div>
+      </ModalWindow>
+      <WidgetBlock
+        title="Portfolio"
+        renderHeaderControls={
+          <WidgetControls
+            buttonIcon="Scales"
+            withFilters
+            onFilterClick={setActiveFilter}
+            activeFilter={activeFilter}
+            renderCustomButton={renderDropdown}
+            onResizeClick={() => setIsModalVisible(true)}
+            onCloseClick={() => dispatch(disableHomeWidget("portfolio"))}
+          />
+        }
+        className={styles.portfolio}
+      >
+        <HomeDailyChart checked={selectedValues} activePeriod={activeFilter} />
+      </WidgetBlock>
+    </>
   );
 };
 

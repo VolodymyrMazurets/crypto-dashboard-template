@@ -6,6 +6,8 @@ import {
   Dropdown,
   Icon,
   Input,
+  ModalWindow,
+  Periods,
   PeriodType,
   WidgetBlock,
   WidgetControls,
@@ -19,6 +21,7 @@ export const HomeDaily: FC = () => {
   const [activeFilter, setActiveFilter] = useState<PeriodType>("30 days");
   const [data, setData] = useState<string[]>([]);
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const dispatch = useAppDispatch();
 
   const renderDropdownContent = useMemo(() => {
@@ -80,6 +83,7 @@ export const HomeDaily: FC = () => {
         dropdownContent={renderDropdownContent}
         placement="bottomRight"
         width={300}
+        zIndex={10001}
       >
         <Button type="icon" icon="Scales" />
       </Dropdown>
@@ -87,22 +91,53 @@ export const HomeDaily: FC = () => {
   }, [renderDropdownContent]);
 
   return (
-    <WidgetBlock
-      title="Daily PNL"
-      renderHeaderControls={
-        <WidgetControls
-          buttonIcon="Scales"
-          withFilters
-          onFilterClick={setActiveFilter}
-          activeFilter={activeFilter}
-          renderCustomButton={renderDropdown}
-          onCloseClick={() => dispatch(disableHomeWidget("dailyPnl"))}
-        />
-      }
-      className={styles.homeDaily}
-    >
-      <HomeDailyChart checked={selectedValues} activePeriod={activeFilter} />
-    </WidgetBlock>
+    <>
+      <ModalWindow
+        isOpen={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+        title="Daily PNL"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 1042,
+          height: 462,
+        }}
+        renderHeadContent={
+          <div className={styles.controls}>
+            <Periods
+              activePeriod={activeFilter}
+              setActivePeriod={setActiveFilter}
+            />
+            {renderDropdown}
+          </div>
+        }
+      >
+        <div className={styles.modal}>
+          <HomeDailyChart
+            checked={selectedValues}
+            activePeriod={activeFilter}
+          />
+        </div>
+      </ModalWindow>
+      <WidgetBlock
+        title="Daily PNL"
+        renderHeaderControls={
+          <WidgetControls
+            buttonIcon="Scales"
+            withFilters
+            onFilterClick={setActiveFilter}
+            activeFilter={activeFilter}
+            renderCustomButton={renderDropdown}
+            onResizeClick={() => setIsModalVisible(true)}
+            onCloseClick={() => dispatch(disableHomeWidget("dailyPnl"))}
+          />
+        }
+        className={styles.homeDaily}
+      >
+        <HomeDailyChart checked={selectedValues} activePeriod={activeFilter} />
+      </WidgetBlock>
+    </>
   );
 };
 

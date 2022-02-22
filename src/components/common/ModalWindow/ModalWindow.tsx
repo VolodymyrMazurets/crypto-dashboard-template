@@ -40,7 +40,7 @@ export const ModalWindow: FC<IModalWindowProps> = ({
         })}
       >
         <h4 className={styles.title}>{title}</h4>
-        <div className={styles.headCustom}>{renderHeadContent}</div>
+        {renderHeadContent}
         <Icon className={styles.close} name="Cross" onClick={onClose} />
       </div>
       <div className={styles.body}>{children}</div>

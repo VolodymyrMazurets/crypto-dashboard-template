@@ -1,0 +1,9 @@
+.periods {
+    @apply flex items-center;
+  }
+  .button {
+    @apply flex items-center text-n3 bg-ts px-3 h-7 rounded-lg transition-colors hover:text-n0;
+  }
+  .active {
+    @apply bg-p5 text-n0;
+  }
