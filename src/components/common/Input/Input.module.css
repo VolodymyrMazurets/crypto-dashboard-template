@@ -30,6 +30,9 @@
 .input.withPrefix {
   @apply pl-7;
 }
+.input.isSearchMode {
+  @apply pl-9
+}
 .sublabel {
   @apply text-sm text-n3 italic inline-block ml-2;
 }
@@ -49,4 +52,8 @@
   absolute
   right-3;
   top: 10px;
+}
+.search {
+  @apply text-n3 absolute left-2;
+  top: 7px;
 }

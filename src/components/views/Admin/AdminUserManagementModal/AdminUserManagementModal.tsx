@@ -8,7 +8,9 @@ import {
 } from "src/components/common";
 import styles from "./AdminUserManagementModal.module.css";
 
-export const AdminUserManagementModal: FC = () => {
+export const AdminUserManagementModal: FC<{
+  onSelectAccountButtonClick: () => void;
+}> = ({ onSelectAccountButtonClick }) => {
   return (
     <div className={styles.modal}>
       <div className={styles.header}>
@@ -58,7 +60,11 @@ export const AdminUserManagementModal: FC = () => {
             </CopyToClipboard>
           </div> */}
         </div>
-        <button type="button" className={classNames(styles.subtle, styles.add)}>
+        <button
+          type="button"
+          className={classNames(styles.subtle, styles.add)}
+          onClick={onSelectAccountButtonClick}
+        >
           <Icon name="Plus" className={styles.icon} />
           New Account Access
         </button>

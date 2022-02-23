@@ -1,0 +1,44 @@
+.modal {
+  @apply flex flex-col w-full gap-4 px-8 pb-8;
+}
+.item {
+  @apply bg-n8 rounded-2xl p-8 flex-1 border border-n8 transition-colors flex items-center cursor-pointer;
+}
+.item.active {
+  @apply border-p5;
+}
+.wrapper {
+  @apply flex flex-col gap-2;
+  flex: 1 1 50%;
+}
+.name {
+  @apply text-lg font-semibold;
+}
+.exchange {
+  @apply text-n2;
+}
+.subname {
+  @apply text-sm text-n2 font-medium;
+}
+.subvalue {
+  @apply text-sm;
+}
+.footer {
+  @apply flex gap-4 items-center w-full;
+}
+.footer > * {
+  @apply w-full;
+}
+.input {
+  @apply absolute;
+  top: 28px;
+  left: 200px;
+}
+.input.inactive {
+    @apply hidden;
+}
+.search {
+  @apply absolute text-n2 hover:text-n1 cursor-pointer;
+  top: 36px;
+  left: 208px;
+}

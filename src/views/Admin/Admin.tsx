@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, useCallback, useMemo, useState } from "react";
 import {
   Button,
   Icon,
@@ -11,6 +11,7 @@ import styles from "./Admin.module.css";
 import {
   AdminAccountModal,
   AdminExchange,
+  AdminSelectAccountModal,
   AdminUserManagement,
   AdminUserManagementModal,
 } from "src/components/views/Admin";
@@ -29,6 +30,8 @@ export const Admin: FC = () => {
   const [isUserModalVisible, setIsUserModalVisible] = useState(false);
   const [isAccountModalVisible, setIsAccountModalVisible] = useState(false);
   const [isApiModalVisible, setIsApiModalVisible] = useState(false);
+  const [isSelectAccountModalVisible, setIsSelectAccountModalVisible] =
+    useState(false);
 
   const renderContent = useMemo(() => {
     switch (activeTab) {
@@ -69,6 +72,16 @@ export const Admin: FC = () => {
     }
   }, [activeTab]);
 
+  const onSelectAccountButtonClick = useCallback(() => {
+    setIsUserModalVisible(false);
+    setIsSelectAccountModalVisible(true);
+  }, []);
+
+  const onSelectAccountSubmitClick = useCallback(() => {
+    setIsSelectAccountModalVisible(false);
+    setIsUserModalVisible(true);
+  }, []);
+
   return (
     <div className={styles.admin}>
       <ModalWindow
@@ -83,7 +96,26 @@ export const Admin: FC = () => {
           maxHeight: "80vh",
         }}
       >
-        <AdminUserManagementModal />
+        <AdminUserManagementModal
+          onSelectAccountButtonClick={onSelectAccountButtonClick}
+        />
+      </ModalWindow>
+      <ModalWindow
+        isOpen={isSelectAccountModalVisible}
+        onClose={() => setIsSelectAccountModalVisible(false)}
+        title="Select Account"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 820,
+          maxHeight: "80vh",
+        }}
+      >
+        <AdminSelectAccountModal
+          onCancel={() => setIsSelectAccountModalVisible(false)}
+          onSubmitClick={onSelectAccountSubmitClick}
+        />
       </ModalWindow>
       <ModalWindow
         isOpen={isAccountModalVisible}
